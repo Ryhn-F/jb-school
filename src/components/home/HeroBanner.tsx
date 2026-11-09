@@ -10,7 +10,7 @@ const HERO_SLIDES: HeroSlide[] = [
 
 export function HeroBanner() {
   return (
-    <section className="relative w-full overflow-hidden bg-neutral-100 aspect-[16/7] min-h-[360px] sm:min-h-[460px] lg:min-h-[520px]">
+    <section className="relative w-full overflow-hidden bg-neutral-100 aspect-[810/275] min-h-[240px]">
       <HeroCarousel slides={HERO_SLIDES} />
 
       {/* pointer-events-none lets swipes on the overlay reach the carousel */}

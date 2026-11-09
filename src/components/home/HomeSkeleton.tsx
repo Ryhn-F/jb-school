@@ -4,7 +4,7 @@ export function HomeSkeleton() {
   return (
     <div className="flex flex-col min-h-screen bg-white" aria-busy="true">
       {/* Hero Skeleton */}
-      <section className="relative w-full aspect-[16/7] min-h-[360px] sm:min-h-[460px] lg:min-h-[520px] bg-neutral-100 flex items-center justify-end px-12">
+      <section className="relative w-full aspect-[810/275] min-h-[240px] bg-neutral-100 flex items-center justify-end px-12">
         <div className="space-y-3 w-80">
           <Skeleton className="h-8 w-48 rounded ml-auto" />
           <Skeleton className="h-12 w-72 rounded ml-auto" />
