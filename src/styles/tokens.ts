@@ -168,6 +168,12 @@ export const assets = {
     futsalField: "/assets/facilities/futsal-field.jpg",
     volleyballField: "/assets/facilities/volleyball-field.jpg",
   },
+  admission: {
+    hero: "/assets/admission/hero.jpg",
+    /** School photo with the white wave blob baked in on the left (desktop) */
+    schoolVisit: "/assets/admission/school-visit.jpg",
+    schoolVisitPhoto: "/assets/admission/school-visit-photo.jpg",
+  },
   academicCards: {
     earlyChildhood: "/assets/academic-card-early-childhood.jpg",
     primary: "/assets/academic-card-primary.jpg",

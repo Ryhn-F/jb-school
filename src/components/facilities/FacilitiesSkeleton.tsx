@@ -3,7 +3,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 export function FacilitiesSkeleton() {
   return (
     <div aria-busy="true" aria-label="Loading Facilities">
-      {/* FacilitiesHero */}
+      {/* TitleHero */}
       <Skeleton className="w-full aspect-[810/275] min-h-[240px] rounded-none" />
 
       {/* FacilityGrid */}

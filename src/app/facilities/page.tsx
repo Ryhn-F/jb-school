@@ -4,7 +4,8 @@ import { Navbar } from "@/components/shared/Navbar";
 import { Footer } from "@/components/shared/Footer";
 import { PartnerLogos } from "@/components/shared/PartnerLogos";
 import { WhatsAppButton } from "@/components/shared/WhatsAppButton";
-import { FacilitiesHero } from "@/components/facilities/FacilitiesHero";
+import { TitleHero } from "@/components/shared/TitleHero";
+import { tokens } from "@/styles/tokens";
 import { FacilityGrid } from "@/components/facilities/FacilityGrid";
 import { FacilitiesSkeleton } from "@/components/facilities/FacilitiesSkeleton";
 
@@ -21,7 +22,11 @@ export default function FacilitiesPage() {
 
       <main className="flex-1">
         <Suspense fallback={<FacilitiesSkeleton />}>
-          <FacilitiesHero />
+          <TitleHero
+            title="FACILITIES"
+            image={tokens.assets.facilities.hero}
+            alt="JB School main building"
+          />
           <FacilityGrid />
           <PartnerLogos />
         </Suspense>
