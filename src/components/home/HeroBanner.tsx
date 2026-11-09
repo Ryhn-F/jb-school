@@ -1,5 +1,5 @@
 import { tokens } from "@/styles/tokens";
-import { HeroCarousel, type HeroSlide } from "@/components/home/HeroCarousel";
+import { HeroCarousel, type HeroSlide } from "@/components/shared/HeroCarousel";
 
 // shortcut: slides 2-3 are placeholders, swap `src: null` for real photos once they exist.
 const HERO_SLIDES: HeroSlide[] = [

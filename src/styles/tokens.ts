@@ -120,6 +120,8 @@ export const assets = {
     empoweringStudents: "/assets/empowering-students.png",
     admissionBanner: "/assets/admission-students-banner.png",
     admissionStudents: "/assets/admission-students.jpg",
+    aboutHero: "/assets/about-hero.jpg",
+    aboutDirector: "/assets/about-director.png",
   },
   academicCards: {
     earlyChildhood: "/assets/academic-card-early-childhood.png",

@@ -1,17 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
-import { FiSearch, FiChevronDown } from "react-icons/fi";
+import { FiSearch } from "react-icons/fi";
 import { tokens } from "@/styles/tokens";
+import { NavLink } from "@/components/shared/NavLink";
 
 interface NavLinkItem {
   label: string;
   href: string;
   hasDropdown?: boolean;
-  isActive?: boolean;
 }
 
 const NAV_LINKS: NavLinkItem[] = [
-  { label: "HOME", href: "/", isActive: true },
+  { label: "HOME", href: "/" },
   { label: "ABOUT US", href: "/about" },
   { label: "ACADEMICS", href: "/academics", hasDropdown: true },
   { label: "FACILITIES", href: "/facilities", hasDropdown: true },
@@ -56,20 +56,7 @@ export function Navbar() {
               aria-label="Main Navigation"
             >
               {NAV_LINKS.map((link) => (
-                <Link
-                  key={link.label}
-                  href={link.href}
-                  className={`inline-flex items-center gap-1 py-1 font-display text-[11px] font-bold tracking-wider transition-colors sm:text-xs ${
-                    link.isActive
-                      ? "font-semibold text-neutral-400"
-                      : "text-black hover:text-jb-navy"
-                  }`}
-                >
-                  <span>{link.label}</span>
-                  {link.hasDropdown && (
-                    <FiChevronDown className="h-3 w-3 stroke-[2.5] text-neutral-700" />
-                  )}
-                </Link>
+                <NavLink key={link.label} {...link} />
               ))}
             </nav>
           </div>
