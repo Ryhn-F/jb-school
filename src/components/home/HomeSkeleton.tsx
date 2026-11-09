@@ -2,7 +2,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 
 export function HomeSkeleton() {
   return (
-    <div className="flex flex-col min-h-screen bg-white" aria-busy="true">
+    <div aria-busy="true" aria-label="Loading Home">
       {/* Hero Skeleton */}
       <section className="relative w-full aspect-[810/275] min-h-[240px] bg-neutral-100 flex items-center justify-end px-12">
         <div className="space-y-3 w-80">

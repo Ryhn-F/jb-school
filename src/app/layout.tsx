@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { openSans, dmSans, bebasNeue } from "./fonts";
 import "./globals.css";
+import { Navbar } from "@/components/shared/Navbar";
+import { Footer } from "@/components/shared/Footer";
+import { WhatsAppButton } from "@/components/shared/WhatsAppButton";
 
 export const metadata: Metadata = {
   title: "JB School - Sekolah Jembatan Budaya, Bali",
@@ -22,7 +25,12 @@ export default function RootLayout({
       className={`${openSans.variable} ${dmSans.variable} ${bebasNeue.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col font-sans bg-white text-[#1a1a1a]">
-        {children}
+        {/* Shared shell: stays mounted across navigations; only <main> streams in
+            each route's loading.tsx skeleton, then its page. */}
+        <Navbar />
+        <main className="flex-1">{children}</main>
+        <Footer />
+        <WhatsAppButton />
       </body>
     </html>
   );

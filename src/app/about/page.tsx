@@ -1,9 +1,6 @@
 import { Suspense } from "react";
 import type { Metadata } from "next";
-import { Navbar } from "@/components/shared/Navbar";
-import { Footer } from "@/components/shared/Footer";
 import { PartnerLogos } from "@/components/shared/PartnerLogos";
-import { WhatsAppButton } from "@/components/shared/WhatsAppButton";
 import { AboutHero } from "@/components/about/AboutHero";
 import { OurHistory } from "@/components/about/OurHistory";
 import { DirectorMessage } from "@/components/about/DirectorMessage";
@@ -18,21 +15,12 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="flex flex-col min-h-screen bg-white">
-      <Navbar />
-
-      <main className="flex-1">
-        <Suspense fallback={<AboutSkeleton />}>
-          <AboutHero />
-          <OurHistory />
-          <DirectorMessage />
-          <VisionMission />
-          <PartnerLogos />
-        </Suspense>
-      </main>
-
-      <Footer />
-      <WhatsAppButton />
-    </div>
+    <Suspense fallback={<AboutSkeleton />}>
+      <AboutHero />
+      <OurHistory />
+      <DirectorMessage />
+      <VisionMission />
+      <PartnerLogos />
+    </Suspense>
   );
 }
