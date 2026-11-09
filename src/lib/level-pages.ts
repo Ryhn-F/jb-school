@@ -158,3 +158,57 @@ export const PRIMARY_SCHOOL_PAGE: LevelPageContent = {
     alt: PRIMARY_ACTIVITY_ALTS[i],
   })),
 };
+
+const jh = tokens.assets.juniorHigh;
+
+const JUNIOR_HIGH_ACTIVITY_ALTS = [
+  "Students running in a fun run",
+  "Students reading on stage at an outdoor event",
+  "Flag dance performance at night",
+  "Students painting a kite together",
+  "Performance group photo",
+  "Piano recital award",
+  "Outdoor camp group photo",
+  "Fan dance performance on stage",
+  "Lion dance performance",
+  "Dragon dance performance on stage",
+];
+
+export const JUNIOR_HIGH_PAGE: LevelPageContent = {
+  hero: {
+    image: jh.hero,
+    alt: "Junior High School students dancing on stage",
+    eyebrow: "JUNIOR HIGH SCHOOL",
+    textTop: 66,
+    headline: [
+      [{ text: "NURTURING THE " }, { text: "INDIVIDUAL", bold: true }],
+      [{ text: "TALENTS, PASSIONS", bold: true }, { text: ", AND" }],
+      [{ text: "CREATIVE POTENTIAL", bold: true }],
+    ],
+  },
+  profile: {
+    body: "Welcome to the Junior High School program at Sekolah Jembatan Budaya (JB School), where we guide young adolescents through a transformative phase of academic growth, personal discovery, and global readiness. Built upon the solid foundation of the Indonesian National Curriculum, our academic program is further enriched with an additional Oxford AQA curriculum for Mathematics and Science, cultivating advanced analytical thinking and problem-solving skills. To foster true international competence, we offer immersive English and Mandarin language programs taught directly by experienced native speakers. Recognizing that the middle school years are critical for self-discovery, our student-centered philosophy actively identifies, nurtures, and expands each teenager's unique talents, interests, and creative potential. All of this takes place within a safe, comfortable, and deeply supportive learning environment where students feel empowered to think critically, collaborate, and excel.",
+    principal: {
+      name: "Ms. Desak Putu Eka Erawati",
+      role: "Junior High School Principal",
+      image: jh.principal,
+    },
+    layout: {
+      height: 422,
+      visualWidth: 348,
+      textLeft: 369,
+      textRight: 762,
+      nameTop: 376,
+      nameCenter: 161,
+      nameSize: 16.1,
+      roleSize: 14.1,
+    },
+  },
+  curriculum:
+    "The Junior High School curriculum at Sekolah Jembatan Budaya (JB School) provides a well-rounded academic journey rooted in the Indonesian National Curriculum and enriched with international standards. We enhance our language offerings with intensive English and Mandarin programs guided directly by native speakers. Additionally, our Mathematics and Science subjects are further strengthened using the prestigious Oxford AQA curriculum framework. Centered on identifying and developing each child's unique potential, interests, and talents, our student-focused approach ensures holistic growth within a safe, comfortable, and highly supportive learning environment.",
+  justifyText: true,
+  activities: jh.activities.map((src, i) => ({
+    src,
+    alt: JUNIOR_HIGH_ACTIVITY_ALTS[i],
+  })),
+};
