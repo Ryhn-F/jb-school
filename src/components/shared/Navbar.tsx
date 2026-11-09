@@ -2,18 +2,25 @@ import Image from "next/image";
 import Link from "next/link";
 import { FiSearch } from "react-icons/fi";
 import { tokens } from "@/styles/tokens";
-import { NavLink } from "@/components/shared/NavLink";
+import { NavLink, type NavSubItem } from "@/components/shared/NavLink";
+import { ACADEMIC_LEVELS } from "@/lib/academic-levels";
 
 interface NavLinkItem {
   label: string;
   href: string;
   hasDropdown?: boolean;
+  items?: NavSubItem[];
 }
 
 const NAV_LINKS: NavLinkItem[] = [
   { label: "HOME", href: "/" },
   { label: "ABOUT US", href: "/about" },
-  { label: "ACADEMICS", href: "/academics", hasDropdown: true },
+  {
+    label: "ACADEMICS",
+    href: "/academics",
+    hasDropdown: true,
+    items: ACADEMIC_LEVELS.map(({ title, href }) => ({ label: title, href })),
+  },
   { label: "FACILITIES", href: "/facilities", hasDropdown: true },
   { label: "ADMISSION", href: "/admission", hasDropdown: true },
   { label: "NEWS", href: "/news" },
