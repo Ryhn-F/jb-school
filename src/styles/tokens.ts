@@ -132,6 +132,14 @@ export const assets = {
       (_, i) => `/assets/early-childhood/activity-${i + 1}.jpg`,
     ),
   },
+  primary: {
+    hero: "/assets/primary/hero.jpg",
+    principal: "/assets/primary/principal.png",
+    activities: Array.from(
+      { length: 10 },
+      (_, i) => `/assets/primary/activity-${i + 1}.jpg`,
+    ),
+  },
   academicCards: {
     earlyChildhood: "/assets/academic-card-early-childhood.jpg",
     primary: "/assets/academic-card-primary.jpg",

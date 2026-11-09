@@ -25,8 +25,8 @@ export default function EarlyChildhoodPage() {
       <main className="flex-1">
         <Suspense fallback={<LevelPageSkeleton />}>
           <LevelHero hero={content.hero} />
-          <LevelProfile profile={content.profile} />
-          <LevelCurriculum text={content.curriculum} />
+          <LevelProfile profile={content.profile} justify={content.justifyText} />
+          <LevelCurriculum text={content.curriculum} justify={content.justifyText} />
           <LevelActivities activities={content.activities} />
           <PartnerLogos />
         </Suspense>

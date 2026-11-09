@@ -13,8 +13,11 @@ export function LevelHero({ hero }: { hero: LevelPageContent["hero"] }) {
     <section className="relative w-full overflow-hidden bg-neutral-100 aspect-[810/275] min-h-[240px]">
       <HeroCarousel slides={slides} />
 
-      {/* Figma: eyebrow top at 27.6% of the banner, right edge at 95.3% */}
-      <div className="pointer-events-none absolute inset-x-0 top-[27.6%] z-10 pr-[4.7%] text-right font-sans text-black">
+      {/* Figma: right edge at 95.3%; top comes from the eyebrow's Figma y within the 275px banner */}
+      <div
+        className="pointer-events-none absolute inset-x-0 z-10 pr-[4.7%] text-right font-sans text-black"
+        style={{ top: `${(hero.textTop / 275) * 100}%` }}
+      >
         <p className="text-sm tracking-[0.09em] sm:text-xl lg:text-3xl xl:text-[33px]">
           {hero.eyebrow}
         </p>
