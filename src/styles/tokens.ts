@@ -148,6 +148,14 @@ export const assets = {
       (_, i) => `/assets/junior-high/activity-${i + 1}.jpg`,
     ),
   },
+  seniorHigh: {
+    hero: "/assets/senior-high/hero.jpg",
+    principal: "/assets/senior-high/principal.png",
+    activities: Array.from(
+      { length: 10 },
+      (_, i) => `/assets/senior-high/activity-${i + 1}.jpg`,
+    ),
+  },
   academicCards: {
     earlyChildhood: "/assets/academic-card-early-childhood.jpg",
     primary: "/assets/academic-card-primary.jpg",

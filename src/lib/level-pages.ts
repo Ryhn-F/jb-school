@@ -212,3 +212,57 @@ export const JUNIOR_HIGH_PAGE: LevelPageContent = {
     alt: JUNIOR_HIGH_ACTIVITY_ALTS[i],
   })),
 };
+
+const sh = tokens.assets.seniorHigh;
+
+const SENIOR_HIGH_ACTIVITY_ALTS = [
+  "Chinese New Year group photo with guests",
+  "Dance performance on a red-lit stage",
+  "Flag performance with a marching band",
+  "Students in traditional Chinese costume on stage",
+  "Class group photo on the school steps",
+  "Study trip in front of a Chinese temple gate",
+  "Whole school group photo",
+  "Basketball tournament award",
+  "Batik pageant runner-up",
+  "Teachers and staff group photo",
+];
+
+export const SENIOR_HIGH_PAGE: LevelPageContent = {
+  hero: {
+    image: sh.hero,
+    alt: "Senior High School orchestra performing on stage",
+    eyebrow: "SENIOR HIGH SCHOOL",
+    textTop: 66,
+    headline: [
+      [{ text: "NURTURING THE " }, { text: "INDIVIDUAL", bold: true }],
+      [{ text: "TALENTS, PASSIONS", bold: true }, { text: ", AND" }],
+      [{ text: "CREATIVE POTENTIAL", bold: true }],
+    ],
+  },
+  profile: {
+    body: "Welcome to the Senior High School program at Sekolah Jembatan Budaya (JB School), where we empower students to transition seamlessly into higher education and future global leadership. Our rigorous academic framework blends the Indonesian National Curriculum with the internationally recognized Oxford AQA curriculum for Mathematics and Science, developing advanced analytical capabilities, critical thinking, and independent research skills. To ensure our graduates thrive in an interconnected world, we provide intensive English and Mandarin language programs taught directly by experienced native speakers. Beyond academic excellence, our student-centered approach is dedicated to identifying, expanding, and refining each teenager’s unique passions, career aspirations, and personal talents. All of this is fostered within a safe, comfortable, and supportive learning environment that encourages mature leadership, intellectual curiosity, and personal integrity.",
+    principal: {
+      name: "Mr. I Wayan Sadiana",
+      role: "Senior High School Principal",
+      image: sh.principal,
+    },
+    layout: {
+      height: 422,
+      visualWidth: 348,
+      textLeft: 377,
+      textRight: 770,
+      nameTop: 376,
+      nameCenter: 161,
+      nameSize: 16.1,
+      roleSize: 14.1,
+    },
+  },
+  curriculum:
+    "The Senior High School curriculum at Sekolah Jembatan Budaya (JB School) offers a robust academic foundation rooted in the Indonesian National Curriculum and enriched with global standards. We enhance student learning through intensive English and Mandarin language programs guided directly by native speakers, along with an additional Oxford AQA curriculum for Mathematics and Science. Centered on discovering, nurturing, and maximizing each student's unique potential, interests, and talents, our approach supports personalized growth within a safe, comfortable, and inspiring learning environment.",
+  justifyText: true,
+  activities: sh.activities.map((src, i) => ({
+    src,
+    alt: SENIOR_HIGH_ACTIVITY_ALTS[i],
+  })),
+};
