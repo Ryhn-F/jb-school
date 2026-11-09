@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { PhotoGallery } from "@/components/shared/PhotoGallery";
 import type { LevelPageContent } from "@/lib/level-pages";
 
 export function LevelActivities({
@@ -16,22 +16,13 @@ export function LevelActivities({
           ACTIVITIES
         </h2>
 
-        <ul className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-5 lg:mt-8 lg:gap-x-8 lg:gap-y-7">
-          {activities.map((activity) => (
-            <li
-              key={activity.src}
-              className="relative aspect-square overflow-hidden rounded-[13%]"
-            >
-              <Image
-                src={activity.src}
-                alt={activity.alt}
-                fill
-                sizes="(min-width: 768px) 20vw, (min-width: 640px) 33vw, 50vw"
-                className="object-cover"
-              />
-            </li>
-          ))}
-        </ul>
+        <PhotoGallery
+          photos={activities}
+          label="Activity photos"
+          listClassName="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-5 lg:mt-8 lg:gap-x-8 lg:gap-y-7"
+          tileClassName="rounded-[13%]"
+          sizes="(min-width: 768px) 20vw, (min-width: 640px) 33vw, 50vw"
+        />
       </div>
     </section>
   );

@@ -3,19 +3,31 @@
 import Image from "next/image";
 import { useEffect, useRef, useState, type MouseEvent } from "react";
 import { FiChevronLeft, FiChevronRight, FiX } from "react-icons/fi";
+import { cn } from "@/lib/utils";
 
-export interface Facility {
-  name: string;
-  image: string;
+export interface GalleryPhoto {
+  src: string;
   alt: string;
+  /** Shown under the tile and in the lightbox; the lightbox falls back to `alt` */
+  caption?: string;
 }
 
-/** Facility tiles + a looping full-screen lightbox (native <dialog>: focus trap and Esc for free). */
-export function FacilityGallery({ facilities }: { facilities: Facility[] }) {
+interface PhotoGalleryProps {
+  photos: GalleryPhoto[];
+  /** Accessible name of the lightbox dialog */
+  label: string;
+  listClassName: string;
+  /** Tile shape, e.g. corner radius */
+  tileClassName: string;
+  sizes: string;
+}
+
+/** Square photo tiles + a looping full-screen lightbox (native <dialog>: focus trap and Esc for free). */
+export function PhotoGallery({ photos, label, listClassName, tileClassName, sizes }: PhotoGalleryProps) {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const [index, setIndex] = useState<number | null>(null);
-  const count = facilities.length;
-  const current = index === null ? null : facilities[index];
+  const count = photos.length;
+  const current = index === null ? null : photos[index];
 
   const open = (i: number) => {
     setIndex(i);
@@ -43,27 +55,32 @@ export function FacilityGallery({ facilities }: { facilities: Facility[] }) {
 
   return (
     <>
-      <ul className="mt-8 grid grid-cols-2 gap-x-4 gap-y-8 md:grid-cols-3 md:gap-x-[4.2%] lg:mt-10 lg:gap-y-14">
-        {facilities.map((facility, i) => (
-          <li key={facility.name}>
+      <ul className={listClassName}>
+        {photos.map((photo, i) => (
+          <li key={photo.src}>
             <figure>
               <button
                 type="button"
                 onClick={() => open(i)}
-                aria-label={`View ${facility.name.toLowerCase()} photo`}
-                className="group relative block aspect-square w-full cursor-zoom-in transition-transform active:scale-[0.98] overflow-hidden rounded-[8%] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-jb-navy"
+                aria-label={photo.caption ? `View ${photo.caption.toLowerCase()} photo` : `View photo: ${photo.alt}`}
+                className={cn(
+                  "group relative block aspect-square w-full cursor-zoom-in overflow-hidden transition-transform active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-jb-navy",
+                  tileClassName,
+                )}
               >
                 <Image
-                  src={facility.image}
-                  alt={facility.alt}
+                  src={photo.src}
+                  alt={photo.alt}
                   fill
-                  sizes="(min-width: 768px) 30vw, 50vw"
+                  sizes={sizes}
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </button>
-              <figcaption className="mt-3 font-sans text-xs font-bold tracking-[0.1em] text-black sm:text-sm lg:mt-4 lg:text-lg xl:text-xl">
-                {facility.name}
-              </figcaption>
+              {photo.caption && (
+                <figcaption className="mt-3 font-sans text-xs font-bold tracking-[0.1em] text-black sm:text-sm lg:mt-4 lg:text-lg xl:text-xl">
+                  {photo.caption}
+                </figcaption>
+              )}
             </figure>
           </li>
         ))}
@@ -71,7 +88,7 @@ export function FacilityGallery({ facilities }: { facilities: Facility[] }) {
 
       <dialog
         ref={dialogRef}
-        aria-label="Facility photos"
+        aria-label={label}
         onClose={() => setIndex(null)}
         onKeyDown={(e) => {
           if (e.key === "ArrowRight") step(1);
@@ -87,8 +104,8 @@ export function FacilityGallery({ facilities }: { facilities: Facility[] }) {
             <figure className="w-[min(100%,78vh)]">
               <div className="relative aspect-square w-full bg-black/30">
                 <Image
-                  key={current.image}
-                  src={current.image}
+                  key={current.src}
+                  src={current.src}
                   alt={current.alt}
                   fill
                   sizes="(min-width: 768px) 78vh, 90vw"
@@ -96,7 +113,7 @@ export function FacilityGallery({ facilities }: { facilities: Facility[] }) {
                 />
               </div>
               <figcaption className="mt-3 flex items-baseline justify-between gap-4 font-sans text-white">
-                <span className="text-base font-bold tracking-wide sm:text-xl">{current.name}</span>
+                <span className="text-base font-bold tracking-wide sm:text-xl">{current.caption ?? current.alt}</span>
                 <span className="shrink-0 text-sm" aria-live="polite">
                   {index! + 1} of {count}
                 </span>
