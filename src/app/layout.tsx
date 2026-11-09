@@ -9,9 +9,6 @@ export const metadata: Metadata = {
   title: "JB School - Sekolah Jembatan Budaya, Bali",
   description:
     "Officially established in 2004, Sekolah Jembatan Budaya (JB School) is a pioneer of National Plus education in Bali, empowering students for global success through Indonesian, English, and Mandarin trilingual learning.",
-  icons: {
-    icon: "/assets/jb-emblem.png",
-  },
 };
 
 export default function RootLayout({
