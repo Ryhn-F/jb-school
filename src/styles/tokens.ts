@@ -122,12 +122,13 @@ export const assets = {
     admissionStudents: "/assets/admission-students.jpg",
     aboutHero: "/assets/about-hero.jpg",
     aboutDirector: "/assets/about-director.png",
+    academicsHero: "/assets/academics-hero.jpg",
   },
   academicCards: {
-    earlyChildhood: "/assets/academic-card-early-childhood.png",
-    primary: "/assets/academic-card-primary.png",
-    junior: "/assets/academic-card-junior.png",
-    senior: "/assets/academic-card-senior.png",
+    earlyChildhood: "/assets/academic-card-early-childhood.jpg",
+    primary: "/assets/academic-card-primary.jpg",
+    junior: "/assets/academic-card-junior.jpg",
+    senior: "/assets/academic-card-senior.jpg",
   },
 } as const;
 

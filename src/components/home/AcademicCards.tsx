@@ -4,74 +4,17 @@ import { useState, useSyncExternalStore, type CSSProperties } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { tokens } from "@/styles/tokens";
+import { ACADEMIC_LEVELS } from "@/lib/academic-levels";
 
-interface AcademicCardItem {
-  id: string;
-  title: string;
-  /** Vertical label shown while the card is collapsed */
-  label: string;
-  description: string;
-  href: string;
-  image: string;
-  alt: string;
-  color: string;
-}
-
-const CARDS: AcademicCardItem[] = [
-  {
-    id: "early-childhood",
-    title: "EARLY CHILDHOOD",
-    label: "EARLY CHILDHOOD",
-    description:
-      "Unlocking your child's unique potential, one playful discovery at a time.",
-    href: "/academics/early-childhood",
-    image: tokens.assets.academicCards.earlyChildhood,
-    alt: "Early Childhood at JB School",
-    color: tokens.colors.academic.earlyChildhood,
-  },
-  {
-    id: "primary",
-    title: "PRIMARY SCHOOL",
-    label: "PRIMARY SCHOOL",
-    description:
-      "Building strong foundations in curiosity, confidence and collaboration.",
-    href: "/academics/primary",
-    image: tokens.assets.academicCards.primary,
-    alt: "Primary School at JB School",
-    color: tokens.colors.academic.primary,
-  },
-  {
-    id: "junior-high",
-    title: "JUNIOR HIGH SCHOOL",
-    label: "JUNIOR HIGH SCHOOL",
-    description:
-      "Guiding students to think critically and communicate with purpose.",
-    href: "/academics/junior-high",
-    image: tokens.assets.academicCards.junior,
-    alt: "Junior High School at JB School",
-    color: tokens.colors.academic.junior,
-  },
-  {
-    id: "senior-high",
-    title: "SENIOR HIGH SCHOOL",
-    label: "SENIOR HIGH SCHOOL",
-    description:
-      "Preparing future leaders of character for university and the world.",
-    href: "/academics/senior-high",
-    image: tokens.assets.academicCards.senior,
-    alt: "Senior High School at JB School",
-    color: tokens.colors.academic.senior,
-  },
-];
+const CARDS = ACADEMIC_LEVELS;
 
 // The first card is active on load and the last hovered/focused card stays active.
 const DEFAULT_ACTIVE_ID = CARDS[0].id;
 
-// Card widths in rem, mirroring Tailwind's w-60/w-64 (open) & w-36/w-44 (closed)
+// Open width equals card height (h-64 / h-72) so the square Figma image shows in full; closed = w-36/w-44
 const WIDTHS = {
-  base: { open: "15rem", closed: "9rem" },
-  sm: { open: "16rem", closed: "11rem" },
+  base: { open: "16rem", closed: "9rem" },
+  sm: { open: "18rem", closed: "11rem" },
 } as const;
 
 const EASE = [0.22, 1, 0.36, 1] as const;
@@ -117,21 +60,14 @@ export function AcademicCards() {
             transition={{ duration: DURATION, ease: EASE }}
             className="group relative block shrink-0 h-64 sm:h-72 rounded-2xl overflow-hidden shadow-md"
           >
-            {/* Image */}
-            <motion.div
-              className="absolute inset-0"
-              initial={false}
-              animate={{ scale: isActive ? 1.05 : 1 }}
-              transition={{ duration: DURATION + 0.2, ease: EASE }}
-            >
-              <Image
-                src={card.image}
-                alt={card.alt}
-                fill
-                sizes="(min-width: 640px) 256px, 240px"
-                className="object-cover"
-              />
-            </motion.div>
+            {/* Image: no zoom, the open card is square so the full image is visible */}
+            <Image
+              src={card.image}
+              alt={card.alt}
+              fill
+              sizes="(min-width: 640px) 288px, 256px"
+              className="object-cover"
+            />
 
             {/* Collapsed dim layer */}
             <motion.div
@@ -154,17 +90,14 @@ export function AcademicCards() {
               }}
             >
               <span className="font-bold text-xs sm:text-sm tracking-widest text-white uppercase drop-shadow [writing-mode:vertical-rl] rotate-180">
-                {card.label}
+                {card.title}
               </span>
             </motion.div>
 
-            {/* Expanded: colored gradient overlay + content.
+            {/* Expanded content (the color gradient is baked into the image).
                 Fixed to the open width so text doesn't reflow while the card resizes. */}
             <motion.div
-              className="absolute bottom-0 left-0 w-60 sm:w-64 p-4 sm:p-5 text-white space-y-1"
-              style={{
-                backgroundImage: `linear-gradient(to top, ${card.color}f2, ${card.color}cc 55%, transparent)`,
-              }}
+              className="absolute bottom-0 left-0 w-64 sm:w-72 p-4 sm:p-5 text-white space-y-1"
               initial={false}
               animate={{
                 opacity: isActive ? 1 : 0,
@@ -179,7 +112,7 @@ export function AcademicCards() {
               <h3 className="font-bold text-sm sm:text-base tracking-wide uppercase">
                 {card.title}
               </h3>
-              <p className="text-[10px] sm:text-[9px] text-white/90 font-bold leading-snug line-clamp-2 pr-[10%]">
+              <p className="text-[10px] sm:text-[9px] text-white/90 font-bold leading-snug pr-[10%]">
                 &ldquo;{card.description}&rdquo;
               </p>
               <span
