@@ -21,7 +21,16 @@ const NAV_LINKS: NavLinkItem[] = [
     hasDropdown: true,
     items: ACADEMIC_LEVELS.map(({ title, href }) => ({ label: title, href })),
   },
-  { label: "FACILITIES", href: "/facilities", hasDropdown: true },
+  {
+    label: "FACILITIES",
+    href: "/facilities",
+    hasDropdown: true,
+    // Same hrefs as the footer's Facilities column
+    items: [
+      { label: "SCHOOL FACILITIES", href: "/facilities" },
+      { label: "ACTIVITIES", href: "/activities" },
+    ],
+  },
   { label: "ADMISSION", href: "/admission", hasDropdown: true },
   { label: "NEWS", href: "/news" },
   { label: "CONTACT US", href: "/contact" },
