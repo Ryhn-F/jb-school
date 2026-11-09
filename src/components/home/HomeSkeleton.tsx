@@ -51,7 +51,7 @@ export function HomeSkeleton() {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {[1, 2, 3, 4].map((i) => (
               <div key={i} className="flex flex-col items-center space-y-3">
-                <Skeleton className="w-24 h-24 rounded-full" />
+                <Skeleton className="w-28 sm:w-32 lg:w-44 xl:w-52 aspect-[122/111] rounded-full" />
                 <Skeleton className="h-8 w-24 rounded" />
                 <Skeleton className="h-4 w-32 rounded" />
               </div>

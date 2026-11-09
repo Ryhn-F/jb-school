@@ -49,21 +49,23 @@ export function StatsBanner() {
               className="flex flex-col items-center text-center space-y-3 group"
             >
               {/* Illustrated Ripple Badge */}
-              <div className="relative w-24 h-24 sm:w-28 sm:h-28 flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
+              <div className="relative w-28 sm:w-32 lg:w-44 xl:w-52 aspect-[122/111] transition-transform duration-300 group-hover:scale-105">
                 <Image
                   src={item.icon}
-                  alt={item.label}
+                  alt=""
+                  aria-hidden="true"
                   fill
+                  sizes="208px"
                   className="object-contain"
                 />
               </div>
 
               {/* Number and Label */}
               <div className="space-y-1">
-                <div className="text-3xl sm:text-4xl font-extrabold text-jb-navy tracking-tight font-display">
+                <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-jb-navy font-sans">
                   <CountUp end={item.value} suffix={item.suffix} />
                 </div>
-                <div className="text-xs sm:text-sm font-bold tracking-widest text-jb-navy uppercase font-sans">
+                <div className="text-sm sm:text-base lg:text-xl font-normal tracking-[0.09em] text-jb-navy uppercase font-sans">
                   {item.label}
                 </div>
               </div>

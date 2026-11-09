@@ -8,6 +8,7 @@ interface AdmissionPillLink {
   href: string;
 }
 
+// Row-major order matches the Figma 2x2 grid.
 const ADMISSION_LINKS: AdmissionPillLink[] = [
   { label: "EARLY CHILDHOOD", href: "/admission/early-childhood" },
   { label: "JUNIOR HIGH SCHOOL", href: "/admission/junior-high" },
@@ -17,52 +18,55 @@ const ADMISSION_LINKS: AdmissionPillLink[] = [
 
 export function AdmissionCallout() {
   return (
-    <section id="admission" className="relative w-full bg-jb-coral text-white overflow-hidden py-10 lg:py-0">
+    <section
+      id="admission"
+      className="relative w-full bg-jb-coral text-white lg:mt-14 lg:min-h-[31.7vw]"
+    >
+      {/* Brick blob + students cutout; on desktop it hugs the left edge and the heads overflow above the banner */}
+      <div className="relative mx-auto w-full max-w-md aspect-[372/287] lg:absolute lg:left-0 lg:bottom-0 lg:mt-0 lg:h-[111.7%] lg:w-auto lg:max-w-none">
+        <Image
+          src={tokens.assets.images.admissionBanner}
+          alt="JB School high-achieving students holding trophies"
+          fill
+          sizes="(min-width: 1024px) 46vw, 448px"
+          className="object-contain object-bottom"
+        />
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center min-h-[300px] lg:min-h-[360px]">
-          {/* Left Student Cutout with Organic Backdrop */}
-          <div className="lg:col-span-5 relative flex items-end justify-center lg:justify-start self-end">
-            <div className="relative w-full max-w-sm sm:max-w-md h-64 sm:h-80 lg:h-[340px]">
-              <Image
-                src={tokens.assets.images.admissionBanner}
-                alt="JB School High-Achieving Students"
-                fill
-                priority
-                className="object-contain object-bottom lg:object-left-bottom"
-              />
-            </div>
+        <div className="lg:ml-[50%] lg:min-h-[31.7vw] flex flex-col justify-center py-10 lg:py-12 space-y-6">
+          <div>
+            <span className="block text-xl lg:text-3xl xl:text-4xl font-normal uppercase tracking-[0.1em]">
+              ADMISSION
+            </span>
+            <p className="text-xl lg:text-3xl xl:text-4xl font-normal tracking-[0.09em]">
+              Are you ready to
+            </p>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight">
+              unleash your potential
+            </h2>
+            <p className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight">
+              <span className="text-xl lg:text-3xl xl:text-4xl font-normal tracking-[0.09em]">
+                and{" "}
+              </span>
+              conquer your future?
+            </p>
           </div>
 
-          {/* Right Text Content & 2x2 Pill Buttons */}
-          <div className="lg:col-span-7 space-y-6 lg:py-10">
-            <div className="space-y-1">
-              <span className="block text-xs sm:text-sm font-bold uppercase tracking-widest text-white/90">
-                ADMISSION
-              </span>
-              <p className="text-xl sm:text-2xl font-normal text-white">
-                Are you ready to
-              </p>
-              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight">
-                unleash your potential
-              </h3>
-              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight">
-                and conquer your future?
-              </h3>
-            </div>
-
-            {/* 2x2 Grid of Admission Level Pills */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-lg pt-1">
-              {ADMISSION_LINKS.map((link) => (
-                <Link
-                  key={link.label}
-                  href={link.href}
-                  className="flex items-center justify-between px-4 py-2 rounded-full border border-white text-white hover:bg-white hover:text-jb-brick transition-all duration-200 text-xs font-bold tracking-wider uppercase group"
-                >
-                  <span>{link.label}</span>
-                  <FiChevronRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
-                </Link>
-              ))}
-            </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-5 gap-y-2.5 max-w-xl">
+            {ADMISSION_LINKS.map((link) => (
+              <Link
+                key={link.label}
+                href={link.href}
+                className="group flex items-center justify-between rounded-full border-[3px] border-jb-surface px-4 py-1.5 text-xs lg:text-sm font-bold uppercase tracking-wide transition-colors duration-200 hover:bg-white hover:text-jb-brick"
+              >
+                <span>{link.label}</span>
+                <FiChevronRight
+                  aria-hidden="true"
+                  className="h-4 w-4 transition-transform group-hover:translate-x-0.5"
+                />
+              </Link>
+            ))}
           </div>
         </div>
       </div>
