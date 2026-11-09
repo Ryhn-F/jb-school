@@ -23,6 +23,9 @@ export const colors = {
     dark: "#b45853", // Brick Red / Dark Coral - buttons, admission shape
     light: "#fcefed",
   },
+  sky: {
+    DEFAULT: "#41b5fd", // Bright sky blue - contact card accent rule
+  },
   sage: {
     DEFAULT: "#bcd8bf", // Soft Sage Green - mission & vision badges, early childhood accents
     dark: "#96af99", // Muted Olive / Pine Green
@@ -173,6 +176,11 @@ export const assets = {
     /** School photo with the white wave blob baked in on the left (desktop) */
     schoolVisit: "/assets/admission/school-visit.jpg",
     schoolVisitPhoto: "/assets/admission/school-visit-photo.jpg",
+  },
+  contact: {
+    hero: "/assets/contact/hero.jpg",
+    /** Hand-drawn directions map from the Figma contact card */
+    directionsMap: "/assets/contact/directions-map.png",
   },
   academicCards: {
     earlyChildhood: "/assets/academic-card-early-childhood.jpg",
