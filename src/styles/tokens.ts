@@ -26,6 +26,10 @@ export const colors = {
   sky: {
     DEFAULT: "#41b5fd", // Bright sky blue - contact card accent rule
   },
+  ocean: {
+    DEFAULT: "#088cce", // Instagram follow button gradient (bottom)
+    light: "#309ed6", // Instagram follow button gradient (top)
+  },
   sage: {
     DEFAULT: "#bcd8bf", // Soft Sage Green - mission & vision badges, early childhood accents
     dark: "#96af99", // Muted Olive / Pine Green
@@ -181,6 +185,11 @@ export const assets = {
     hero: "/assets/contact/hero.jpg",
     /** Hand-drawn directions map from the Figma contact card */
     directionsMap: "/assets/contact/directions-map.png",
+  },
+  news: {
+    hero: "/assets/news/hero.jpg",
+    /** Instagram post exports from the Figma "News & Activities" grid */
+    posts: Array.from({ length: 12 }, (_, i) => `/assets/news/post-${i + 1}.jpg`),
   },
   academicCards: {
     earlyChildhood: "/assets/academic-card-early-childhood.jpg",
