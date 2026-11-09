@@ -156,6 +156,18 @@ export const assets = {
       (_, i) => `/assets/senior-high/activity-${i + 1}.jpg`,
     ),
   },
+  facilities: {
+    hero: "/assets/facilities/hero.jpg",
+    basketballCourt: "/assets/facilities/basketball-court.jpg",
+    swimmingPool: "/assets/facilities/swimming-pool.jpg",
+    sportHall: "/assets/facilities/sport-hall.jpg",
+    musicRoom: "/assets/facilities/music-room.jpg",
+    biologyLab: "/assets/facilities/biology-lab.jpg",
+    cafeteria: "/assets/facilities/cafeteria.jpg",
+    classroom: "/assets/facilities/classroom.jpg",
+    futsalField: "/assets/facilities/futsal-field.jpg",
+    volleyballField: "/assets/facilities/volleyball-field.jpg",
+  },
   academicCards: {
     earlyChildhood: "/assets/academic-card-early-childhood.jpg",
     primary: "/assets/academic-card-primary.jpg",
