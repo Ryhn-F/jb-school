@@ -31,7 +31,17 @@ const NAV_LINKS: NavLinkItem[] = [
       { label: "ACTIVITIES", href: "/activities" },
     ],
   },
-  { label: "ADMISSION", href: "/admission", hasDropdown: true },
+  {
+    label: "ADMISSION",
+    href: "/admission",
+    hasDropdown: true,
+    // Same hrefs as the footer's Admission column
+    items: [
+      { label: "PROCEDURES", href: "/admission" },
+      { label: "FAQ", href: "/faq" },
+      { label: "CONTACT US", href: "/contact" },
+    ],
+  },
   { label: "NEWS", href: "/news" },
   { label: "CONTACT US", href: "/contact" },
 ];

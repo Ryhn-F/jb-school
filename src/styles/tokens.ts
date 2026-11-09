@@ -189,7 +189,10 @@ export const assets = {
   news: {
     hero: "/assets/news/hero.jpg",
     /** Instagram post exports from the Figma "News & Activities" grid */
-    posts: Array.from({ length: 12 }, (_, i) => `/assets/news/post-${i + 1}.jpg`),
+    posts: Array.from(
+      { length: 12 },
+      (_, i) => `/assets/news/post-${i + 1}.jpg`,
+    ),
   },
   academicCards: {
     earlyChildhood: "/assets/academic-card-early-childhood.jpg",
