@@ -94,7 +94,7 @@ export function HeroCarousel({ slides }: { slides: HeroSlide[] }) {
             aria-label={`Go to slide ${i + 1}`}
             aria-current={i === index}
             className={cn(
-              "w-3 h-3 rounded-full border-2 border-white shadow-md transition-colors",
+              "w-3 h-3 rounded-full border-2 border-white shadow-md transition hover:scale-125 active:scale-90",
               i === index ? "bg-white" : "bg-transparent hover:bg-white/50",
             )}
           />

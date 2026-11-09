@@ -1,11 +1,5 @@
-import Image from "next/image";
 import { tokens } from "@/styles/tokens";
-
-interface Facility {
-  name: string;
-  image: string;
-  alt: string;
-}
+import { FacilityGallery, type Facility } from "@/components/facilities/FacilityGallery";
 
 const f = tokens.assets.facilities;
 
@@ -33,27 +27,9 @@ export function FacilityGrid() {
           SCHOOL FACILITIES
         </h2>
 
-        {/* Figma: 216px tiles, 30px column gap, 57px between a label and the next row */}
-        <ul className="mt-8 grid grid-cols-2 gap-x-4 gap-y-8 md:grid-cols-3 md:gap-x-[4.2%] lg:mt-10 lg:gap-y-14">
-          {FACILITIES.map((facility) => (
-            <li key={facility.name}>
-              <figure>
-                <div className="relative aspect-square overflow-hidden rounded-[8%]">
-                  <Image
-                    src={facility.image}
-                    alt={facility.alt}
-                    fill
-                    sizes="(min-width: 768px) 30vw, 50vw"
-                    className="object-cover"
-                  />
-                </div>
-                <figcaption className="mt-3 font-sans text-xs font-bold tracking-[0.1em] text-black sm:text-sm lg:mt-4 lg:text-lg xl:text-xl">
-                  {facility.name}
-                </figcaption>
-              </figure>
-            </li>
-          ))}
-        </ul>
+        {/* Figma: 216px tiles, 30px column gap, 57px between a label and the next row.
+            Tiles open a looping lightbox on click. */}
+        <FacilityGallery facilities={FACILITIES} />
       </div>
     </section>
   );
