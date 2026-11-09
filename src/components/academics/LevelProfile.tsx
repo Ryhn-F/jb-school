@@ -27,12 +27,13 @@ export function LevelProfile({
 
   return (
     <section
-      className="relative w-full bg-jb-blue lg:min-h-(--band-h)"
+      className="relative w-full overflow-hidden bg-jb-blue lg:min-h-(--band-h)"
       style={vars}
       aria-labelledby="level-profile-title"
     >
-      {/* White wave blob + principal cutout exported from Figma; name sits on the blob */}
-      <div className="@container relative aspect-(--visual-aspect) w-full sm:w-2/3 lg:absolute lg:inset-y-0 lg:left-0 lg:aspect-auto lg:w-(--visual-w)">
+      {/* White wave blob + principal cutout exported from Figma; name sits on the blob.
+          Bleeds 1px past the band (clipped by overflow-hidden) so sub-pixel rounding never shows a blue hairline. */}
+      <div className="@container relative aspect-(--visual-aspect) w-full sm:w-2/3 lg:absolute lg:-inset-y-px lg:left-0 lg:aspect-auto lg:w-(--visual-w)">
         <Image
           src={principal.image}
           alt={`${principal.name}, ${principal.role}`}
