@@ -1,26 +1,54 @@
 @import "tailwindcss";
 
+@theme {
+    /* Fonts */
+    --font-sans:
+        var(--font-open-sans), system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", Roboto, sans-serif;
+    --font-display: var(--font-dm-sans), system-ui, sans-serif;
+    --font-accent: var(--font-bebas-neue), sans-serif;
+
+    /* Brand Colors from Figma */
+    --color-jb-navy: #043399;
+    --color-jb-navy-dark: #03256c;
+    --color-jb-navy-light: #1a4ab8;
+
+    --color-jb-blue: #85a1dd;
+    --color-jb-blue-light: #d9e4f8;
+    --color-jb-blue-subtle: #eef3fc;
+
+    --color-jb-coral: #ed9893;
+    --color-jb-brick: #b45853;
+    --color-jb-coral-light: #fcefed;
+
+    --color-jb-sage: #bcd8bf;
+    --color-jb-moss: #96af99;
+    --color-jb-sage-light: #f0f6f1;
+
+    --color-jb-surface: #fbfafb;
+    --color-jb-border: #bfbabd;
+    --color-jb-gray: #bfbfbf;
+
+    --color-social-whatsapp: #25d366;
+    --color-social-facebook: #1877f2;
+    --color-social-instagram: #e4405f;
+    --color-social-youtube: #ff0000;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+    --background: #ffffff;
+    --foreground: #1a1a1a;
+    --primary: #043399;
+    --secondary: #85a1dd;
+    --accent: #ed9893;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+    background: var(--background);
+    color: var(--foreground);
+    font-family:
+        var(--font-open-sans),
+        system-ui,
+        -apple-system,
+        sans-serif;
 }
