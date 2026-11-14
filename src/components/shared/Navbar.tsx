@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import { FiSearch } from "react-icons/fi";
 import { tokens } from "@/styles/tokens";
 import { NavLink, type NavSubItem } from "@/components/shared/NavLink";
+import { PARTNERS } from "@/components/shared/PartnerLogos";
 import { ACADEMIC_LEVELS } from "@/lib/academic-levels";
 
 interface NavLinkItem {
@@ -55,27 +55,30 @@ export function Navbar() {
             <Image
               src={tokens.assets.logo.main}
               alt="JB School 文桥三语学校"
-              width={170}
-              height={50}
+              width={4096}
+              height={1366}
+              sizes="180px"
               priority
               className="h-10 w-auto object-contain sm:h-12"
             />
           </Link>
 
           <div className="flex min-w-0 flex-1 flex-col items-end gap-2">
-            {/* Search Pill */}
-            <div className="relative flex items-center">
-              <FiSearch
-                className="pointer-events-none absolute left-3.5 h-4 w-4 text-neutral-500"
-                aria-hidden="true"
-              />
-              <input
-                type="text"
-                placeholder="Search here..."
-                aria-label="Search"
-                className="w-48 rounded-full border border-neutral-300 bg-white py-1.5 pr-4 pl-9 text-xs text-neutral-800 transition-all placeholder:text-neutral-400 focus:border-jb-navy focus:outline-none sm:w-56"
-              />
-            </div>
+            {/* Partner logos (Figma header, top right) */}
+            <ul className="hidden items-center gap-5 sm:flex lg:gap-7" aria-label="Educational Partners">
+              {PARTNERS.map((p) => (
+                <li key={p.src}>
+                  <Image
+                    src={p.src}
+                    alt={p.alt}
+                    width={p.width}
+                    height={p.height}
+                    sizes="120px"
+                    className="h-6 w-auto object-contain lg:h-7"
+                  />
+                </li>
+              ))}
+            </ul>
 
             <nav
               className="flex flex-wrap items-center justify-end gap-5 sm:gap-7"

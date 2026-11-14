@@ -11,10 +11,11 @@ const CARDS = ACADEMIC_LEVELS;
 // The first card is active on load and the last hovered/focused card stays active.
 const DEFAULT_ACTIVE_ID = CARDS[0].id;
 
-// Open width equals card height (h-64 / h-72) so the square Figma image shows in full; closed = w-36/w-44
+// Open width = card height (h-64 / h-72) x the 1404/1016 photo ratio, so the open card shows the whole
+// landscape photo instead of a cropped (zoomed-looking) square; closed = w-36
 const WIDTHS = {
-  base: { open: "16rem", closed: "9rem" },
-  sm: { open: "18rem", closed: "11rem" },
+  base: { open: "22.1rem", closed: "9rem" },
+  sm: { open: "24.9rem", closed: "9rem" },
 } as const;
 
 const EASE = [0.22, 1, 0.36, 1] as const;
@@ -60,12 +61,12 @@ export function AcademicCards() {
             transition={{ duration: DURATION, ease: EASE }}
             className="group relative block shrink-0 h-64 sm:h-72 rounded-2xl overflow-hidden shadow-md"
           >
-            {/* Image: no zoom, the open card is square so the full image is visible */}
+            {/* Image: no zoom, the open card matches the photo's aspect so the full image is visible */}
             <Image
               src={card.image}
               alt={card.alt}
               fill
-              sizes="(min-width: 640px) 288px, 256px"
+              sizes="(min-width: 640px) 400px, 354px"
               className="object-cover"
             />
 

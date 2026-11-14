@@ -20,17 +20,19 @@ export function AdmissionCallout() {
   return (
     <section
       id="admission"
-      className="relative w-full bg-jb-coral text-white lg:mt-14 lg:min-h-[31.7vw]"
+      className="relative w-full overflow-hidden bg-jb-coral text-white lg:min-h-[31.7vw]"
     >
-      {/* Brick blob + students cutout; on desktop it hugs the left edge and the heads overflow above the banner */}
-      <div className="relative mx-auto w-full max-w-md aspect-[372/287] lg:absolute lg:left-0 lg:bottom-0 lg:mt-0 lg:h-[111.7%] lg:w-auto lg:max-w-none">
-        <Image
-          src={tokens.assets.images.admissionBanner}
-          alt="JB School high-achieving students holding trophies"
-          fill
-          sizes="(min-width: 1024px) 46vw, 448px"
-          className="object-contain object-bottom"
-        />
+      {/* Brick panel with the students cutout; on desktop it fills the left 46% like the Figma frame */}
+      <div className="relative mx-auto aspect-[497/343] w-full max-w-md overflow-hidden rounded-r-[2.5rem] bg-jb-brick lg:absolute lg:inset-y-0 lg:left-0 lg:mx-0 lg:aspect-auto lg:w-[46%] lg:max-w-none lg:rounded-tr-[1.6rem] lg:rounded-br-[2.9rem]">
+        <div className="absolute bottom-0 left-[5%] top-[4%] w-[68%]">
+          <Image
+            src={tokens.assets.home.admissionStudents}
+            alt="JB School high-achieving students holding trophies"
+            fill
+            sizes="(min-width: 1024px) 32vw, 300px"
+            className="object-contain object-bottom"
+          />
+        </div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

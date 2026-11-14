@@ -4,13 +4,7 @@ export function HomeSkeleton() {
   return (
     <div aria-busy="true" aria-label="Loading Home">
       {/* Hero Skeleton */}
-      <section className="relative w-full aspect-[810/275] min-h-[240px] bg-neutral-100 flex items-center justify-end px-12">
-        <div className="space-y-3 w-80">
-          <Skeleton className="h-8 w-48 rounded ml-auto" />
-          <Skeleton className="h-12 w-72 rounded ml-auto" />
-          <Skeleton className="h-8 w-40 rounded ml-auto" />
-        </div>
-      </section>
+      <Skeleton className="w-full aspect-[1080/336] min-h-[200px] rounded-none" />
 
       {/* Academics Skeleton */}
       <section className="py-14 sm:py-20 bg-white">
@@ -75,6 +69,29 @@ export function HomeSkeleton() {
                 <Skeleton className="h-10 rounded-full bg-white/40" />
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Video Tour Skeleton */}
+      <section className="bg-white pt-10 pb-8 sm:pt-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Skeleton className="h-7 w-80 max-w-full rounded mx-auto" />
+          <div className="mt-6 sm:mt-8 grid grid-cols-1 md:grid-cols-2 gap-5">
+            <Skeleton className="aspect-video w-full rounded-none" />
+            <Skeleton className="aspect-video w-full rounded-none" />
+          </div>
+        </div>
+      </section>
+
+      {/* Stay Connected Skeleton */}
+      <section className="bg-white pt-8 pb-16 sm:pb-20">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Skeleton className="h-7 w-56 rounded mx-auto" />
+          <div className="mt-8 sm:mt-12 grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-7">
+            {[1, 2, 3, 4].map((i) => (
+              <Skeleton key={i} className="aspect-[210/315] w-full rounded-[20px]" />
+            ))}
           </div>
         </div>
       </section>

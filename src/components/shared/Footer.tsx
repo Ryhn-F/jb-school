@@ -110,6 +110,7 @@ export function Footer() {
                 src={tokens.assets.logo.emblem}
                 alt="JB School Crest Emblem"
                 fill
+                sizes="128px"
                 className="object-contain"
               />
             </div>

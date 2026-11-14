@@ -45,5 +45,6 @@ function unauthorized() {
 }
 
 export const config = {
-  matcher: ["/((?!_next/static|_next/image|favicon.ico|robots.txt).*)"],
+  // /assets is public because the image optimizer fetches it internally without the auth header.
+  matcher: ["/((?!_next/static|_next/image|assets/|favicon.ico|robots.txt).*)"],
 };

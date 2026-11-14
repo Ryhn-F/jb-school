@@ -112,9 +112,10 @@ export const assets = {
     youtube: "/assets/icon-youtube.png",
   },
   partners: {
-    all: "/assets/partners-all.png",
-    cambridge: "/assets/partner-1.png",
-    oxford: "/assets/partner-2.png",
+    cambridge: "/assets/partners/cambridge.png",
+    hsk: "/assets/partners/hsk.png",
+    yct: "/assets/partners/yct.png",
+    oxfordAqa: "/assets/partners/oxford-aqa.png",
   },
   stats: {
     established: "/assets/stat-established.png",
@@ -123,10 +124,6 @@ export const assets = {
     studyAbroad: "/assets/stat-study-abroad.png",
   },
   images: {
-    heroCampus: "/assets/hero-campus.jpg",
-    empoweringStudents: "/assets/empowering-students.png",
-    admissionBanner: "/assets/admission-students-banner.png",
-    admissionStudents: "/assets/admission-students.jpg",
     aboutHero: "/assets/about-hero.jpg",
     aboutDirector: "/assets/about-director.png",
     academicsHero: "/assets/academics-hero.jpg",
@@ -195,10 +192,17 @@ export const assets = {
     ),
   },
   academicCards: {
-    earlyChildhood: "/assets/academic-card-early-childhood.jpg",
-    primary: "/assets/academic-card-primary.jpg",
-    junior: "/assets/academic-card-junior.jpg",
-    senior: "/assets/academic-card-senior.jpg",
+    earlyChildhood: "/assets/academic-card-early-childhood.png",
+    primary: "/assets/academic-card-primary.png",
+    junior: "/assets/academic-card-junior.png",
+    senior: "/assets/academic-card-senior.png",
+  },
+  /** Raw HD exports from the Figma "Home Assets" group */
+  home: {
+    banners: Array.from({ length: 3 }, (_, i) => `/assets/home/banner-${i + 1}.png`),
+    empoweringStudents: "/assets/home/empowering-students.png",
+    admissionStudents: "/assets/home/admission-students.png",
+    achievements: Array.from({ length: 4 }, (_, i) => `/assets/home/achievement-${i + 1}.png`),
   },
 } as const;
 

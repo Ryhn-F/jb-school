@@ -32,17 +32,16 @@ export function EmpoweringBanner() {
             </p>
           </div>
 
-          {/* Right Students Cutout Image */}
-          <div className="lg:col-span-7 relative flex items-end justify-center lg:justify-end self-end">
-            <div className="relative w-full max-w-md sm:max-w-lg lg:max-w-none h-64 sm:h-80 lg:h-[360px]">
-              <Image
-                src={tokens.assets.images.empoweringStudents}
-                alt="JB School Empowering Students for Success"
-                fill
-                priority
-                className="object-contain object-bottom"
-              />
-            </div>
+          {/* Right: the Figma "Empowering assets" group exported as one transparent image (963x585) */}
+          <div className="lg:col-span-7 relative self-end h-48 sm:h-72 lg:h-[380px]">
+            <Image
+              src={tokens.assets.home.empoweringStudents}
+              alt="JB School students from Early Childhood to Senior High School"
+              fill
+              priority
+              sizes="(min-width: 1024px) 640px, 100vw"
+              className="object-contain object-bottom lg:object-right-bottom"
+            />
           </div>
         </div>
       </div>
