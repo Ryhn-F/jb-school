@@ -57,9 +57,9 @@ export function Navbar() {
               alt="JB School 文桥三语学校"
               width={4096}
               height={1366}
-              sizes="200px"
+              sizes="300px"
               priority
-              className="h-10 w-auto object-contain sm:h-15"
+              className="h-10 w-auto object-contain sm:h-20"
             />
           </Link>
 
