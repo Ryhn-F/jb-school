@@ -10,10 +10,10 @@ interface AdmissionPillLink {
 
 // Row-major order matches the Figma 2x2 grid.
 const ADMISSION_LINKS: AdmissionPillLink[] = [
-  { label: "EARLY CHILDHOOD", href: "/admission/early-childhood" },
-  { label: "JUNIOR HIGH SCHOOL", href: "/admission/junior-high" },
-  { label: "PRIMARY SCHOOL", href: "/admission/primary" },
-  { label: "SENIOR HIGH SCHOOL", href: "/admission/senior-high" },
+  { label: "EARLY CHILDHOOD", href: "/admission/" },
+  { label: "JUNIOR HIGH SCHOOL", href: "/admission/" },
+  { label: "PRIMARY SCHOOL", href: "/admission/" },
+  { label: "SENIOR HIGH SCHOOL", href: "/admission/" },
 ];
 
 export function AdmissionCallout() {

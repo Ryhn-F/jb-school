@@ -32,8 +32,9 @@ export function EmpoweringBanner() {
             </p>
           </div>
 
-          {/* Right: the Figma "Empowering assets" group exported as one transparent image (963x585) */}
-          <div className="lg:col-span-7 relative self-end h-48 sm:h-72 lg:h-[380px]">
+          {/* Right: Figma "Empowering assets" export, trimmed to the students (829x475).
+              Figma: 505x290 in a 1080x315 band = 92% of the band height, bottom-aligned. */}
+          <div className="lg:col-span-7 relative self-end h-56 sm:h-80 lg:h-[350px] lg:mt-[30px]">
             <Image
               src={tokens.assets.home.empoweringStudents}
               alt="JB School students from Early Childhood to Senior High School"

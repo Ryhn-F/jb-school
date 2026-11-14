@@ -11,11 +11,11 @@ const CARDS = ACADEMIC_LEVELS;
 // The first card is active on load and the last hovered/focused card stays active.
 const DEFAULT_ACTIVE_ID = CARDS[0].id;
 
-// Open width = card height (h-64 / h-72) x the 1404/1016 photo ratio, so the open card shows the whole
-// landscape photo instead of a cropped (zoomed-looking) square; closed = w-36
+// Figma: open card is square (235 x 235), closed cards are 157 x 235, relative to card height (h-64 / h-72).
+// sm closed is 11.5rem (not 12) so the row (~876px) fits the 3/4 column of max-w-7xl without scrolling.
 const WIDTHS = {
-  base: { open: "22.1rem", closed: "9rem" },
-  sm: { open: "24.9rem", closed: "9rem" },
+  base: { open: "16rem", closed: "10.7rem" },
+  sm: { open: "18rem", closed: "11.5rem" },
 } as const;
 
 const EASE = [0.22, 1, 0.36, 1] as const;
@@ -45,7 +45,7 @@ export function AcademicCards() {
   const widths = isSmUp ? WIDTHS.sm : WIDTHS.base;
 
   return (
-    <div className="w-full lg:w-3/4 flex items-center justify-start lg:justify-end gap-3 sm:gap-4 overflow-x-auto pb-4 lg:pb-0 scrollbar-none">
+    <div className="w-full lg:w-3/4 flex items-center justify-start lg:justify-end gap-3 overflow-x-auto pb-4 lg:pb-0 scrollbar-none">
       {CARDS.map((card) => {
         const isActive = card.id === activeId;
 
@@ -61,14 +61,18 @@ export function AcademicCards() {
             transition={{ duration: DURATION, ease: EASE }}
             className="group relative block shrink-0 h-64 sm:h-72 rounded-2xl overflow-hidden shadow-md"
           >
-            {/* Image: no zoom, the open card matches the photo's aspect so the full image is visible */}
-            <Image
-              src={card.image}
-              alt={card.alt}
-              fill
-              sizes="(min-width: 640px) 400px, 354px"
-              className="object-cover"
-            />
+            {/* Fixed-size photo layer (full height x 1404/1016) pinned to the card's left edge: the card
+                widening only reveals more of the photo to the right; the photo itself never rescales.
+                -13.8% of the photo width ((1.38 - 1) / 2 / 1.38) centers it in the open (square) card. */}
+            <div className="absolute inset-y-0 left-0 aspect-[1404/1016] -translate-x-[13.8%]">
+              <Image
+                src={card.image}
+                alt={card.alt}
+                fill
+                sizes="(min-width: 640px) 400px, 354px"
+                className="object-cover"
+              />
+            </div>
 
             {/* Collapsed dim layer */}
             <motion.div
