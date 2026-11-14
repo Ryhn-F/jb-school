@@ -49,7 +49,7 @@ const NAV_LINKS: NavLinkItem[] = [
 export function Navbar() {
   return (
     <header className=" top-0 z-50 bg-white shadow-sm">
-      <div className="w-full px-4 sm:px-6 lg:px-[4.9%]">
+      <div className="w-full px-4 sm:px-6 lg:px-[4.9%] pt-5">
         <div className="flex items-center justify-between gap-8 py-5">
           <Link href="/" className="flex shrink-0 items-center">
             <Image
@@ -57,15 +57,18 @@ export function Navbar() {
               alt="JB School 文桥三语学校"
               width={4096}
               height={1366}
-              sizes="180px"
+              sizes="200px"
               priority
-              className="h-10 w-auto object-contain sm:h-12"
+              className="h-10 w-auto object-contain sm:h-15"
             />
           </Link>
 
-          <div className="flex min-w-0 flex-1 flex-col items-end gap-2">
+          <div className="flex min-w-0 flex-1 flex-col items-end gap-4">
             {/* Partner logos (Figma header, top right) */}
-            <ul className="hidden items-center gap-5 sm:flex lg:gap-7" aria-label="Educational Partners">
+            <ul
+              className="hidden items-center gap-5 sm:flex lg:gap-7"
+              aria-label="Educational Partners"
+            >
               {PARTNERS.map((p) => (
                 <li key={p.src}>
                   <Image

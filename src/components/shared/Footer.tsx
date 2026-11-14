@@ -1,121 +1,137 @@
 import Image from "next/image";
 import Link from "next/link";
-import { FaFacebookF, FaInstagram, FaYoutube } from "react-icons/fa6";
+import type { IconType } from "react-icons";
+import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa6";
 import { tokens } from "@/styles/tokens";
 
+interface FooterColumn {
+  title: string;
+  links: { label: string; href: string }[];
+}
+
+const FOOTER_COLUMNS: FooterColumn[] = [
+  {
+    title: "ACADEMICS",
+    links: [
+      { label: "Early Childhood", href: "/academics/early-childhood" },
+      { label: "Primary School", href: "/academics/primary" },
+      { label: "Junior High School", href: "/academics/junior-high" },
+      { label: "Senior High School", href: "/academics/senior-high" },
+    ],
+  },
+  {
+    title: "FACILITIES",
+    links: [
+      { label: "School Facilities", href: "/facilities" },
+      { label: "Activities", href: "/activities" },
+    ],
+  },
+  {
+    title: "ADMISSION",
+    links: [
+      { label: "Procedure", href: "/admission" },
+      { label: "FAQ", href: "/faq" },
+      { label: "Contact us", href: "/contact" },
+    ],
+  },
+];
+
+const SOCIALS: { label: string; href: string; Icon: IconType; name: string }[] =
+  [
+    {
+      label: "JBSCHOOL.BALI",
+      href: "https://facebook.com/jbschool.bali",
+      Icon: FaFacebook,
+      name: "Facebook",
+    },
+    {
+      label: "JBSCHOOL.BALI",
+      href: "https://instagram.com/jbschool.bali",
+      Icon: FaInstagram,
+      name: "Instagram",
+    },
+    {
+      label: "JBSCHOOL BALI",
+      href: "https://youtube.com/@jbschoolbali",
+      Icon: FaYoutube,
+      name: "YouTube",
+    },
+  ];
+
+// Figma footer (1080 x 240): logo 138 | contact 348 | 95 | 83 | 84 columns, 58px gutters, 40px left / 60px right padding.
 export function Footer() {
   return (
-    <footer id="contact" className="bg-jb-blue text-white mt-auto">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
-          {/* School Contact Details & Social Links */}
-          <div className="lg:col-span-5 space-y-4">
-            <h4 className="font-bold text-xs sm:text-sm tracking-wider uppercase text-white">
-              JEMBATAN BUDAYA SCHOOL, BALI
-            </h4>
-            <div className="space-y-1 text-xs text-white/95 leading-relaxed font-sans">
-              <p>Jalan Raya Kuta No 1, Kuta, Badung, 80361 Bali - Indonesia</p>
-              <p>Telp : (+62 361) 752554, 752776 | Fax : (+62 361) 756235</p>
-              <p>
-                Email :{" "}
+    <footer id="contact" className="mt-auto bg-jb-blue font-sans text-white">
+      <div className="grid grid-cols-3 gap-x-6 gap-y-8 px-6 py-10 lg:grid-cols-[138fr_348fr_95fr_83fr_84fr] lg:gap-x-[5.4vw] lg:pt-[3.1vw] lg:pb-[5.4vw] lg:pl-[3.7vw] lg:pr-[5.6vw]">
+        {/* Stacked lockup: emblem over wordmark */}
+        <Link
+          href="/"
+          aria-label="JB School home"
+          className="col-span-3 mx-auto flex w-32 flex-col items-center gap-[6%] lg:col-span-1 lg:mx-0 lg:w-full"
+        >
+          <Image
+            src={tokens.assets.logo.emblem}
+            alt=""
+            width={1300}
+            height={500}
+            className="w-full h-auto"
+          />
+        </Link>
+
+        <div className="col-span-3 text-center lg:col-span-1 lg:pt-[0.65vw] lg:text-left">
+          <h2 className="text-base font-bold xl:text-lg">
+            JEMBATAN BUDAYA SCHOOL, BALI
+          </h2>
+          <address className="mt-3 text-[11px] not-italic leading-[1.8] tracking-[1px] lg:mt-[1.4vw] lg:text-[10px] xl:text-xs">
+            Jalan Raya Kuta No 1, Kuta, Badung, 80361 Bali - Indonesia
+            <br />
+            Telp : (+62 361) 752554, 752776, Fax : (+62 361) 756235
+            <br />
+            Email :{" "}
+            <a href="mailto:info@jbschool-bali.com" className="hover:underline">
+              info@jbschool-bali.com
+            </a>
+          </address>
+
+          <ul className="mt-6 flex flex-wrap justify-center gap-x-2 gap-y-3 lg:mt-[2.6vw] lg:justify-start">
+            {SOCIALS.map(({ label, href, Icon, name }) => (
+              <li key={name}>
                 <a
-                  href="mailto:info@jbschool-bali.com"
-                  className="underline hover:text-white transition-colors"
+                  href={href}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={`JB School on ${name}`}
+                  className="flex items-center gap-2 font-condensed text-xs transition-opacity hover:opacity-80 xl:text-sm"
                 >
-                  info@jbschool-bali.com
+                  <Icon className="size-6 xl:size-7" aria-hidden="true" />
+                  {label}
                 </a>
-              </p>
-            </div>
-
-            {/* Social Handle text badges matching Figma: [f] JBSCHOOL.BALI, [ig] JBSCHOOL.BALI, [yt] JBSCHOOL BALI */}
-            <div className="flex items-center gap-4 sm:gap-6 pt-4 text-xs font-bold text-white flex-wrap">
-              <a
-                href="https://facebook.com/jbschool.bali"
-                target="_blank"
-                rel="noreferrer"
-                className="flex items-center gap-1.5 hover:text-white/80 transition-colors"
-              >
-                <span className="w-5 h-5 flex items-center justify-center rounded bg-white text-jb-blue text-[10px] font-black">
-                  <FaFacebookF className="w-3 h-3" />
-                </span>
-                <span className="uppercase text-[11px] tracking-wider">JBSCHOOL.BALI</span>
-              </a>
-
-              <a
-                href="https://instagram.com/jbschool.bali"
-                target="_blank"
-                rel="noreferrer"
-                className="flex items-center gap-1.5 hover:text-white/80 transition-colors"
-              >
-                <span className="w-5 h-5 flex items-center justify-center rounded bg-white text-jb-blue text-[10px] font-black">
-                  <FaInstagram className="w-3 h-3" />
-                </span>
-                <span className="uppercase text-[11px] tracking-wider">JBSCHOOL.BALI</span>
-              </a>
-
-              <a
-                href="https://youtube.com/@jbschoolbali"
-                target="_blank"
-                rel="noreferrer"
-                className="flex items-center gap-1.5 hover:text-white/80 transition-colors"
-              >
-                <span className="w-5 h-5 flex items-center justify-center rounded bg-white text-jb-blue text-[10px] font-black">
-                  <FaYoutube className="w-3 h-3" />
-                </span>
-                <span className="uppercase text-[11px] tracking-wider">JBSCHOOL BALI</span>
-              </a>
-            </div>
-          </div>
-
-          {/* Nav Column 1: Academics */}
-          <div className="lg:col-span-2 space-y-2 text-xs">
-            <h5 className="font-bold text-white uppercase tracking-wider text-xs">
-              ACADEMICS
-            </h5>
-            <ul className="space-y-1.5 text-white/90">
-              <li><Link href="/academics/early-childhood" className="hover:text-white transition-colors">Early Childhood</Link></li>
-              <li><Link href="/academics/primary" className="hover:text-white transition-colors">Primary School</Link></li>
-              <li><Link href="/academics/junior-high" className="hover:text-white transition-colors">Junior High School</Link></li>
-              <li><Link href="/academics/senior-high" className="hover:text-white transition-colors">Senior High School</Link></li>
-            </ul>
-          </div>
-
-          {/* Nav Column 2: Facilities */}
-          <div className="lg:col-span-2 space-y-2 text-xs">
-            <h5 className="font-bold text-white uppercase tracking-wider text-xs">
-              FACILITIES
-            </h5>
-            <ul className="space-y-1.5 text-white/90">
-              <li><Link href="/facilities" className="hover:text-white transition-colors">School Facilities</Link></li>
-              <li><Link href="/activities" className="hover:text-white transition-colors">Activities</Link></li>
-            </ul>
-          </div>
-
-          {/* Nav Column 3: Admission */}
-          <div className="lg:col-span-1 space-y-2 text-xs">
-            <h5 className="font-bold text-white uppercase tracking-wider text-xs">
-              ADMISSION
-            </h5>
-            <ul className="space-y-1.5 text-white/90">
-              <li><Link href="/admission" className="hover:text-white transition-colors">Procedure</Link></li>
-              <li><Link href="/faq" className="hover:text-white transition-colors">FAQ</Link></li>
-              <li><Link href="/contact" className="hover:text-white transition-colors">Contact us</Link></li>
-            </ul>
-          </div>
-
-          {/* Right Column: JB School Crest Badge */}
-          <div className="lg:col-span-2 flex flex-col items-center lg:items-end justify-center">
-            <div className="relative w-28 h-28 sm:w-32 sm:h-32">
-              <Image
-                src={tokens.assets.logo.emblem}
-                alt="JB School Crest Emblem"
-                fill
-                sizes="128px"
-                className="object-contain"
-              />
-            </div>
-          </div>
+              </li>
+            ))}
+          </ul>
         </div>
+
+        {FOOTER_COLUMNS.map((column) => (
+          <nav
+            key={column.title}
+            aria-label={column.title}
+            className="text-[10px] leading-[19px] lg:pt-[0.75vw] xl:text-xs xl:leading-[22px]"
+          >
+            <h3 className="font-bold">{column.title}</h3>
+            <ul className="tracking-[0.6px]">
+              {column.links.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="whitespace-nowrap hover:underline"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        ))}
       </div>
     </footer>
   );

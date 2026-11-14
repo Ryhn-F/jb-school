@@ -104,6 +104,8 @@ export const assets = {
   logo: {
     main: "/assets/jb-logo.png",
     emblem: "/assets/jb-emblem.png",
+    /** Text half of jb-logo.png, for the stacked footer lockup */
+    wordmark: "/assets/jb-wordmark.png",
   },
   icons: {
     whatsapp: "/assets/whatsapp-icon.png",
@@ -124,8 +126,10 @@ export const assets = {
     studyAbroad: "/assets/stat-study-abroad.png",
   },
   images: {
-    aboutHero: "/assets/about-hero.jpg",
-    aboutDirector: "/assets/about-director.png",
+    /** Figma "About Us Assets > Banner 1": founder over the school building */
+    aboutHero: "/assets/about/banner-1.jpg",
+    /** Figma "About Us Assets > Director" group: moss blob + director cutout */
+    aboutDirector: "/assets/about/director.png",
     academicsHero: "/assets/academics-hero.jpg",
   },
   earlyChildhood: {

@@ -1,6 +1,5 @@
 import { Suspense } from "react";
 import type { Metadata } from "next";
-import { PartnerLogos } from "@/components/shared/PartnerLogos";
 import { AboutHero } from "@/components/about/AboutHero";
 import { OurHistory } from "@/components/about/OurHistory";
 import { DirectorMessage } from "@/components/about/DirectorMessage";
@@ -20,7 +19,6 @@ export default function AboutPage() {
       <OurHistory />
       <DirectorMessage />
       <VisionMission />
-      <PartnerLogos />
     </Suspense>
   );
 }

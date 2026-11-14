@@ -14,14 +14,14 @@ export function DirectorMessage() {
       className="relative w-full bg-jb-sage text-black lg:min-h-[38.5vw]"
       aria-labelledby="director-message-title"
     >
-      {/* Moss blob + director cutout; on desktop the head overflows above the band like the Figma frame */}
-      <div className="pointer-events-none relative mx-auto w-full max-w-sm aspect-[304/356] lg:absolute lg:left-0 lg:bottom-0 lg:h-[114.1%] lg:w-auto lg:max-w-none">
+      {/* Figma "Director" group export (moss blob + cutout, 678 x 693), pinned bottom-left of the band */}
+      <div className="pointer-events-none relative mx-auto w-full max-w-sm aspect-[678/693] lg:absolute lg:bottom-0 lg:left-0 lg:mx-0 lg:h-full lg:w-auto lg:max-w-none">
         <Image
           src={tokens.assets.images.aboutDirector}
           alt="Ms. Ayu Maharani, School Director of JB School"
           fill
           sizes="(min-width: 1024px) 38vw, 384px"
-          className="object-contain object-bottom"
+          className="object-contain object-left-bottom"
         />
       </div>
 

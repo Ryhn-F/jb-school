@@ -1,4 +1,12 @@
-import { Open_Sans, DM_Sans, Bebas_Neue } from "next/font/google";
+import { Open_Sans, DM_Sans, Bebas_Neue, Oswald } from "next/font/google";
+
+/** Footer social handles (Figma: Oswald Regular 12) */
+export const oswald = Oswald({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-oswald",
+  display: "swap",
+});
 
 export const openSans = Open_Sans({
   subsets: ["latin"],

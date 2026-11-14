@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { openSans, dmSans, bebasNeue } from "./fonts";
+import { openSans, dmSans, bebasNeue, oswald } from "./fonts";
 import "./globals.css";
 import { Navbar } from "@/components/shared/Navbar";
 import { Footer } from "@/components/shared/Footer";
@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${openSans.variable} ${dmSans.variable} ${bebasNeue.variable} h-full antialiased`}
+      className={`${openSans.variable} ${dmSans.variable} ${bebasNeue.variable} ${oswald.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col font-sans bg-white text-[#1a1a1a]">
         {/* Shared shell: stays mounted across navigations; only <main> streams in

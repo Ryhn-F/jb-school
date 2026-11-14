@@ -10,7 +10,7 @@ const MISSION_ITEMS = [
 export function VisionMission() {
   return (
     <section className="bg-white py-10 lg:py-8" aria-label="Vision and Mission">
-      <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 px-4 text-black sm:px-6 md:grid-cols-2 md:gap-[8%] lg:px-8">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 items-start gap-10 px-4 text-black sm:px-6 md:grid-cols-2 md:gap-[8%] lg:px-8">
         <div>
           <h2 className="font-sans text-xl font-bold tracking-[0.1em] lg:text-2xl xl:text-[26px]">
             VISION
