@@ -43,7 +43,7 @@ const NAV_LINKS: NavLinkItem[] = [
     ],
   },
   { label: "NEWS", href: "/news" },
-  { label: "CONTACT US", href: "/contact" },
+  { label: "COMMUNITY", href: "/community" },
 ];
 
 export function Navbar() {

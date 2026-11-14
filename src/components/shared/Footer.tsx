@@ -62,7 +62,7 @@ const SOCIALS: { label: string; href: string; Icon: IconType; name: string }[] =
 export function Footer() {
   return (
     <footer id="contact" className="mt-auto bg-jb-blue font-sans text-white">
-      <div className="grid grid-cols-3 gap-x-6 gap-y-8 px-6 py-10 lg:grid-cols-[138fr_348fr_95fr_83fr_84fr] lg:gap-x-[5.4vw] lg:pt-[3.1vw] lg:pb-[5.4vw] lg:pl-[3.7vw] lg:pr-[5.6vw]">
+      <div className="grid grid-cols-3 gap-x-6 gap-y-8 px-6 py-10 lg:grid-cols-[138fr_348fr_95fr_83fr_84fr] lg:gap-x-[5.4vw] lg:pt-[3.1vw] lg:pb-[2.4vw] lg:pl-[3.7vw] lg:pr-[5.6vw]">
         {/* Stacked lockup: emblem over wordmark */}
         <Link
           href="/"
@@ -133,6 +133,10 @@ export function Footer() {
           </nav>
         ))}
       </div>
+      <hr />
+      <p className="px-6 pb-5\2 text-center text-[10px] tracking-[0.6px] text-white/80 lg:pb-4 pt-4 xl:text-xs">
+        Powered by <span className="">Schoolink</span>
+      </p>
     </footer>
   );
 }
