@@ -1,11 +1,9 @@
 import { Suspense } from "react";
 import type { Metadata } from "next";
-import { PartnerLogos } from "@/components/shared/PartnerLogos";
-import { TitleHero } from "@/components/shared/TitleHero";
+import { AdmissionHero } from "@/components/admission/AdmissionHero";
 import { ProcedureList } from "@/components/admission/ProcedureList";
 import { SchoolVisit } from "@/components/admission/SchoolVisit";
 import { AdmissionSkeleton } from "@/components/admission/AdmissionSkeleton";
-import { tokens } from "@/styles/tokens";
 
 export const metadata: Metadata = {
   title: "Admission - JB School, Bali",
@@ -16,14 +14,9 @@ export const metadata: Metadata = {
 export default function AdmissionPage() {
   return (
     <Suspense fallback={<AdmissionSkeleton />}>
-      <TitleHero
-        title="ADMISSION"
-        image={tokens.assets.admission.hero}
-        alt="JB School student practising Chinese calligraphy"
-      />
+      <AdmissionHero />
       <ProcedureList />
       <SchoolVisit />
-      <PartnerLogos />
     </Suspense>
   );
 }

@@ -176,9 +176,8 @@ export const assets = {
   },
   admission: {
     hero: "/assets/admission/hero.jpg",
-    /** School photo with the white wave blob baked in on the left (desktop) */
-    schoolVisit: "/assets/admission/school-visit.jpg",
-    schoolVisitPhoto: "/assets/admission/school-visit-photo.jpg",
+    /** School building photo cut with a wavy left edge (transparent) */
+    schoolVisit: "/assets/admission/school-visit.webp",
   },
   contact: {
     hero: "/assets/contact/hero.jpg",

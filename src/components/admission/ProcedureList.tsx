@@ -17,61 +17,46 @@ const REQUIRED_DOCUMENTS = [
   "One (1) set of permit letter to study in Indonesia from the Ministry of Education, Culture, Research, and Technology – upon student’s acceptance (foreign students only)",
 ];
 
+// Figma "5.Admission": sizes are px in a 1080px frame, so desktop sizes are cqw of the section.
+const headingClass =
+  "font-sans text-sm font-bold tracking-[0.15em] lg:text-[1.48cqw]";
 const listClass =
-  "mt-4 list-disc space-y-0 pl-6 font-sans text-sm leading-[1.4] tracking-[0.095em] lg:mt-5 lg:text-justify lg:text-lg xl:text-[22px]";
+  "list-disc pl-5 font-sans text-sm leading-[1.41] tracking-[0.1em] lg:mt-[2.2cqw] lg:pl-[1.9cqw] lg:text-justify lg:text-[1.57cqw]";
 
 export function ProcedureList() {
   return (
-    <section className="bg-white py-10 lg:pt-8 lg:pb-12" aria-labelledby="admission-procedure-title">
-      <div className="mx-auto max-w-7xl px-4 text-black sm:px-6 lg:px-8">
-        <header className="text-center font-sans">
-          <p className="text-base font-bold tracking-[0.09em] lg:text-xl xl:text-2xl">ADMISSION</p>
-          <h2
-            id="admission-procedure-title"
-            className="text-3xl font-bold tracking-[0.09em] lg:text-4xl xl:text-[45px]"
-          >
-            PROCEDURE
-          </h2>
-          <p className="mt-3 text-sm tracking-[0.095em] lg:text-lg xl:text-[22px]">
-            Kindly take a moment to read the information detail about the
-            registration procedure:
-          </p>
-        </header>
+    <section
+      className="@container bg-white pt-8 pb-6 text-black lg:pt-[3cqw] lg:pb-[2cqw]"
+      aria-labelledby="admission-procedure-title"
+    >
+      <header className="px-4 text-center font-sans tracking-[0.1em]">
+        <p className="text-base font-bold lg:text-[1.67cqw]">ADMISSION</p>
+        <h2
+          id="admission-procedure-title"
+          className="text-3xl font-bold lg:mt-[0.3cqw] lg:text-[3.15cqw]"
+        >
+          PROCEDURE
+        </h2>
+        <p className="mt-3 text-sm lg:mt-[2.6cqw] lg:text-[1.57cqw]">
+          Kindly take a moment to read the information detail about the
+          registration procedure:
+        </p>
+      </header>
 
-        <h3 className="mt-8 font-sans text-sm font-bold tracking-[0.1em] lg:mt-9 lg:text-lg xl:text-[22px]">
-          REGISTRATION PROCEDURE :
-        </h3>
-        <ul className={listClass}>
+      <div className="px-4 sm:px-6 lg:pr-[5.4%] lg:pl-[5%]">
+        <h3 className={`mt-8 lg:mt-[4.35cqw] ${headingClass}`}>REGISTRATION PROCEDURE :</h3>
+        <ul className={`mt-4 ${listClass}`}>
           {REGISTRATION_STEPS.map((step) => (
             <li key={step}>{step}</li>
           ))}
         </ul>
 
-        <h3 className="mt-6 font-sans text-sm font-bold tracking-[0.1em] lg:mt-8 lg:text-lg xl:text-[22px]">
-          GENERAL REGISTRATION DOCUMENTS :
-        </h3>
-        <ul className={listClass}>
+        <h3 className={`mt-6 lg:mt-[2.5cqw] ${headingClass}`}>GENERAL REGISTRATION DOCUMENTS :</h3>
+        <ul className={`mt-4 ${listClass}`}>
           {REQUIRED_DOCUMENTS.map((doc) => (
             <li key={doc}>{doc}</li>
           ))}
         </ul>
-
-        <div className="mt-6 text-center font-sans text-sm tracking-[0.095em] lg:mt-7 lg:text-lg xl:text-[22px]">
-          <p>If you have a question please contact us at :</p>
-          <p className="mt-3 lg:mt-4">
-            Telp : <a href="tel:+62361752554" className="hover:text-jb-navy">(+62 361) 752554</a>,{" "}
-            <a href="tel:+62361752776" className="hover:text-jb-navy">752776</a>, Fax : (+62 361)
-            756235 Whatsapp :{" "}
-            <a
-              href="https://wa.me/6281138816881"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-jb-navy"
-            >
-              081138816881
-            </a>
-          </p>
-        </div>
       </div>
     </section>
   );
