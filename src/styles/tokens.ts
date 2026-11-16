@@ -140,6 +140,12 @@ export const assets = {
       (_, i) => `/assets/early-childhood/activity-${i + 1}.jpg`,
     ),
   },
+  academics: {
+    banners: Array.from(
+      { length: 4 },
+      (_, i) => `/assets/academics/Banner-photo-${i + 1}.png`,
+    ),
+  },
   primary: {
     hero: "/assets/primary/hero.jpg",
     principal: "/assets/primary/principal.png",
@@ -203,10 +209,16 @@ export const assets = {
   },
   /** Raw HD exports from the Figma "Home Assets" group */
   home: {
-    banners: Array.from({ length: 3 }, (_, i) => `/assets/home/banner-${i + 1}.png`),
+    banners: Array.from(
+      { length: 3 },
+      (_, i) => `/assets/home/banner-${i + 1}.png`,
+    ),
     empoweringStudents: "/assets/home/empowering-students.png",
     admissionStudents: "/assets/home/admission-students.png",
-    achievements: Array.from({ length: 4 }, (_, i) => `/assets/home/achievement-${i + 1}.png`),
+    achievements: Array.from(
+      { length: 4 },
+      (_, i) => `/assets/home/achievement-${i + 1}.png`,
+    ),
   },
 } as const;
 

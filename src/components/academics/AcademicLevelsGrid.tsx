@@ -3,7 +3,10 @@ import { ACADEMIC_LEVELS } from "@/lib/academic-levels";
 
 export function AcademicLevelsGrid() {
   return (
-    <section className="bg-white py-10 lg:pt-9 lg:pb-12" aria-labelledby="academics-title">
+    <section
+      className="bg-white py-10 lg:pt-9 lg:pb-12"
+      aria-labelledby="academics-title"
+    >
       <div className="mx-auto max-w-7xl px-4 text-black sm:px-6 lg:px-8">
         <header className="text-center">
           <span className="block font-sans text-sm font-bold tracking-[0.1em] lg:text-lg xl:text-xl">
@@ -24,9 +27,11 @@ export function AcademicLevelsGrid() {
         </div>
 
         <blockquote className="mx-auto mt-12 max-w-4xl text-center font-sans text-base leading-normal tracking-[0.01em] lg:mt-16 lg:text-xl xl:text-[23px]">
-          &ldquo;True education equips students with the Communication to be
-          heard, the Cooperation to work globally, and the Character to lead
-          with integrity.&rdquo;
+          &ldquo;True education equips students with the{" "}
+          <span className="font-bold">Communication</span> to be heard, the{" "}
+          <span className="font-bold">Cooperation</span> to work globally, and{" "}
+          the <span className="font-bold">Character</span> to lead with
+          integrity.&rdquo;
         </blockquote>
       </div>
     </section>

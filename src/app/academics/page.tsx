@@ -1,6 +1,5 @@
 import { Suspense } from "react";
 import type { Metadata } from "next";
-import { PartnerLogos } from "@/components/shared/PartnerLogos";
 import { AcademicsHero } from "@/components/academics/AcademicsHero";
 import { AcademicLevelsGrid } from "@/components/academics/AcademicLevelsGrid";
 import { AcademicsSkeleton } from "@/components/academics/AcademicsSkeleton";
@@ -16,7 +15,6 @@ export default function AcademicsPage() {
     <Suspense fallback={<AcademicsSkeleton />}>
       <AcademicsHero />
       <AcademicLevelsGrid />
-      <PartnerLogos />
     </Suspense>
   );
 }
