@@ -1,6 +1,5 @@
 import { Suspense } from "react";
 import type { Metadata } from "next";
-import { PartnerLogos } from "@/components/shared/PartnerLogos";
 import { LevelHero } from "@/components/academics/LevelHero";
 import { LevelProfile } from "@/components/academics/LevelProfile";
 import { LevelCurriculum } from "@/components/academics/LevelCurriculum";
@@ -18,10 +17,9 @@ export default function JuniorHighPage() {
   return (
     <Suspense fallback={<LevelPageSkeleton />}>
       <LevelHero hero={content.hero} />
-      <LevelProfile profile={content.profile} justify={content.justifyText} />
-      <LevelCurriculum text={content.curriculum} justify={content.justifyText} />
+      {content.profile && <LevelProfile profile={content.profile} />}
+      <LevelCurriculum curriculum={content.curriculum} />
       <LevelActivities activities={content.activities} />
-      <PartnerLogos />
     </Suspense>
   );
 }

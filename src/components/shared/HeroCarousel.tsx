@@ -86,7 +86,7 @@ export function HeroCarousel({ slides }: { slides: HeroSlide[] }) {
       </div>
 
       <div className="absolute bottom-5 inset-x-0 z-20 flex justify-center items-center gap-2.5">
-        {slides.map((_, i) => (
+        {count > 1 && slides.map((_, i) => (
           <button
             key={i}
             type="button"

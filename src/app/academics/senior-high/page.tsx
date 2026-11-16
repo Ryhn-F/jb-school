@@ -1,10 +1,10 @@
 import { Suspense } from "react";
 import type { Metadata } from "next";
-import { PartnerLogos } from "@/components/shared/PartnerLogos";
 import { LevelHero } from "@/components/academics/LevelHero";
 import { LevelProfile } from "@/components/academics/LevelProfile";
 import { LevelCurriculum } from "@/components/academics/LevelCurriculum";
 import { LevelActivities } from "@/components/academics/LevelActivities";
+import { LevelStudyAbroad } from "@/components/academics/LevelStudyAbroad";
 import { LevelPageSkeleton } from "@/components/academics/LevelPageSkeleton";
 import { SENIOR_HIGH_PAGE as content } from "@/lib/level-pages";
 
@@ -18,10 +18,10 @@ export default function SeniorHighPage() {
   return (
     <Suspense fallback={<LevelPageSkeleton />}>
       <LevelHero hero={content.hero} />
-      <LevelProfile profile={content.profile} justify={content.justifyText} />
-      <LevelCurriculum text={content.curriculum} justify={content.justifyText} />
+      {content.profile && <LevelProfile profile={content.profile} />}
+      <LevelCurriculum curriculum={content.curriculum} />
       <LevelActivities activities={content.activities} />
-      <PartnerLogos />
+      {content.studyAbroad && <LevelStudyAbroad columns={content.studyAbroad} />}
     </Suspense>
   );
 }

@@ -35,6 +35,9 @@ export const colors = {
     dark: "#96af99", // Muted Olive / Pine Green
     light: "#f0f6f1",
   },
+  indigo: {
+    DEFAULT: "#1a135a", // Academic blob + Study Abroad band on the level pages
+  },
 
   // Academic card accents (hover overlay gradient per level)
   academic: {
@@ -100,6 +103,15 @@ export const typography = {
   },
 } as const;
 
+const paths = (dir: string, name: string, count: number) =>
+  Array.from({ length: count }, (_, i) => `/assets/${dir}/${name}-${i + 1}.jpg`);
+
+const levelAssets = (dir: string, activityCount: number) => ({
+  banners: paths(dir, "banner", 3),
+  profile: `/assets/${dir}/profile.png`,
+  activities: paths(dir, "activity", activityCount),
+});
+
 export const assets = {
   logo: {
     main: "/assets/jb-logo.png",
@@ -132,43 +144,21 @@ export const assets = {
     aboutDirector: "/assets/about/director.png",
     academicsHero: "/assets/academics-hero.jpg",
   },
-  earlyChildhood: {
-    hero: "/assets/early-childhood/hero.jpg",
-    principal: "/assets/early-childhood/principal.png",
-    activities: Array.from(
-      { length: 10 },
-      (_, i) => `/assets/early-childhood/activity-${i + 1}.jpg`,
-    ),
-  },
+  /** Raw HD exports from the Figma "<Level> Assets" groups; profile.png is the
+   *  left 480px of the Figma profile band (white wave, Academic Blob, principal) at 2x */
+  earlyChildhood: levelAssets("early-childhood", 10),
   academics: {
     banners: Array.from(
       { length: 4 },
       (_, i) => `/assets/academics/Banner-photo-${i + 1}.png`,
     ),
   },
-  primary: {
-    hero: "/assets/primary/hero.jpg",
-    principal: "/assets/primary/principal.png",
-    activities: Array.from(
-      { length: 10 },
-      (_, i) => `/assets/primary/activity-${i + 1}.jpg`,
-    ),
-  },
-  juniorHigh: {
-    hero: "/assets/junior-high/hero.jpg",
-    principal: "/assets/junior-high/principal.png",
-    activities: Array.from(
-      { length: 10 },
-      (_, i) => `/assets/junior-high/activity-${i + 1}.jpg`,
-    ),
-  },
-  seniorHigh: {
-    hero: "/assets/senior-high/hero.jpg",
-    principal: "/assets/senior-high/principal.png",
-    activities: Array.from(
-      { length: 10 },
-      (_, i) => `/assets/senior-high/activity-${i + 1}.jpg`,
-    ),
+  primary: levelAssets("primary", 10),
+  juniorHigh: levelAssets("junior-high", 10),
+  seniorHigh: levelAssets("senior-high", 5),
+  jbCollege: {
+    banner: "/assets/jb-college/banner-1.jpg",
+    activities: paths("jb-college", "activity", 4),
   },
   facilities: {
     hero: "/assets/facilities/hero.jpg",

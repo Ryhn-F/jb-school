@@ -19,7 +19,10 @@ const NAV_LINKS: NavLinkItem[] = [
     label: "ACADEMICS",
     href: "/academics",
     hasDropdown: true,
-    items: ACADEMIC_LEVELS.map(({ title, href }) => ({ label: title, href })),
+    items: [
+      ...ACADEMIC_LEVELS.map(({ title, href }) => ({ label: title, href })),
+      { label: "JB COLLEGE", href: "/academics/jb-college" },
+    ],
   },
   {
     label: "FACILITIES",
