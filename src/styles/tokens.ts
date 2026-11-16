@@ -53,6 +53,7 @@ export const colors = {
     subtle: "#fbfafb", // Section background tint, soft card container
     card: "#ffffff",
     footer: "#85a1dd", // Footer primary blue
+    frame: "#f5f1e6", // Cream photo frame (Community galleries)
   },
 
   // Text & Neutrals
@@ -191,6 +192,11 @@ export const assets = {
       { length: 12 },
       (_, i) => `/assets/news/post-${i + 1}.jpg`,
     ),
+  },
+  community: {
+    banner: "/assets/community/banner.jpg",
+    alumni: paths("community", "alumni", 6),
+    parents: paths("community", "parents", 6),
   },
   academicCards: {
     earlyChildhood: "/assets/academic-card-early-childhood.png",
