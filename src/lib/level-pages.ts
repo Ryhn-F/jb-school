@@ -30,6 +30,8 @@ export interface ProfileLayout {
 
 export interface LevelPageContent {
   hero: {
+    /** Page heading; visually hidden because the Figma banners carry no text */
+    title: string;
     slides: { src: string; alt: string }[];
     /** Figma banner height (frame is 1080 wide) */
     height: number;
@@ -67,6 +69,7 @@ const ec = tokens.assets.earlyChildhood;
 
 export const EARLY_CHILDHOOD_PAGE: LevelPageContent = {
   hero: {
+    title: "Early Childhood",
     slides: slides(ec.banners, [
       "Early Childhood students dancing in pink costumes",
       "Early Childhood students at a play centre",
@@ -136,6 +139,7 @@ const ps = tokens.assets.primary;
 
 export const PRIMARY_SCHOOL_PAGE: LevelPageContent = {
   hero: {
+    title: "Primary School",
     slides: slides(ps.banners, [
       "Primary School students performing on stage",
       "Primary School outing with an environment banner",
@@ -209,6 +213,7 @@ const jh = tokens.assets.juniorHigh;
 
 export const JUNIOR_HIGH_PAGE: LevelPageContent = {
   hero: {
+    title: "Junior High School",
     slides: slides(jh.banners, [
       "Junior High School students dancing on stage",
       "Junior High School graduation group photo",
@@ -282,6 +287,7 @@ const sh = tokens.assets.seniorHigh;
 
 export const SENIOR_HIGH_PAGE: LevelPageContent = {
   hero: {
+    title: "Senior High School",
     slides: slides(sh.banners, [
       "Senior High School orchestra performing on stage",
       "Senior High School study trip group photo",
@@ -372,6 +378,7 @@ const jc = tokens.assets.jbCollege;
 
 export const JB_COLLEGE_PAGE: LevelPageContent = {
   hero: {
+    title: "JB College",
     slides: [{ src: jc.banner, alt: "JB College graduates in caps and gowns" }],
     height: 405,
   },

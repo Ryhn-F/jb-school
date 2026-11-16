@@ -19,11 +19,13 @@ interface PhotoGalleryProps {
   listClassName: string;
   /** Tile shape, e.g. corner radius */
   tileClassName: string;
+  /** Overrides for the caption under each tile */
+  captionClassName?: string;
   sizes: string;
 }
 
 /** Square photo tiles + a looping full-screen lightbox (native <dialog>: focus trap and Esc for free). */
-export function PhotoGallery({ photos, label, listClassName, tileClassName, sizes }: PhotoGalleryProps) {
+export function PhotoGallery({ photos, label, listClassName, tileClassName, captionClassName, sizes }: PhotoGalleryProps) {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const [index, setIndex] = useState<number | null>(null);
   const count = photos.length;
@@ -77,7 +79,12 @@ export function PhotoGallery({ photos, label, listClassName, tileClassName, size
                 />
               </button>
               {photo.caption && (
-                <figcaption className="mt-3 font-sans text-xs font-bold tracking-[0.1em] text-black sm:text-sm lg:mt-4 lg:text-lg xl:text-xl">
+                <figcaption
+                  className={cn(
+                    "mt-3 font-sans text-xs font-bold tracking-[0.1em] text-black sm:text-sm lg:mt-4 lg:text-lg xl:text-xl",
+                    captionClassName,
+                  )}
+                >
                   {photo.caption}
                 </figcaption>
               )}

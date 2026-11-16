@@ -160,8 +160,9 @@ export const assets = {
     banner: "/assets/jb-college/banner-1.jpg",
     activities: paths("jb-college", "activity", 4),
   },
+  /** Raw HD exports from the Figma "Facilities Assets" group */
   facilities: {
-    hero: "/assets/facilities/hero.jpg",
+    banners: paths("facilities", "banner", 3),
     basketballCourt: "/assets/facilities/basketball-court.jpg",
     swimmingPool: "/assets/facilities/swimming-pool.jpg",
     sportHall: "/assets/facilities/sport-hall.jpg",

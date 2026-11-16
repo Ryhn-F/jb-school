@@ -1,41 +1,101 @@
 import { tokens } from "@/styles/tokens";
-import { PhotoGallery, type GalleryPhoto } from "@/components/shared/PhotoGallery";
+import {
+  PhotoGallery,
+  type GalleryPhoto,
+} from "@/components/shared/PhotoGallery";
 
 const f = tokens.assets.facilities;
 
-// Order and labels follow the Figma "Facilities" frame (row by row).
+// Order and labels follow the Figma "4.Facilities" frame (row by row).
 const FACILITIES: GalleryPhoto[] = [
-  { caption: "BASKETBALL COURT", src: f.basketballCourt, alt: "Covered outdoor basketball court" },
-  { caption: "SWIMMING POOL", src: f.swimmingPool, alt: "Covered swimming pool" },
-  { caption: "SPORT HALL", src: f.sportHall, alt: "Student playing badminton in the sport hall" },
-  { caption: "MUSIC ROOM", src: f.musicRoom, alt: "Music room with Balinese gamelan instruments" },
-  { caption: "BIOLOGY LABORATORY", src: f.biologyLab, alt: "Students using microscopes in the biology lab" },
-  { caption: "CAFETERIA", src: f.cafeteria, alt: "Students sitting in the school cafeteria" },
-  { caption: "CLASSROOM", src: f.classroom, alt: "Classroom with blue chairs and a whiteboard" },
-  { caption: "FUTSAL FIELD", src: f.futsalField, alt: "Outdoor futsal field seen from above" },
-  { caption: "VOLLEYBALL FIELD", src: f.volleyballField, alt: "Outdoor volleyball field seen from above" },
+  {
+    caption: "BASKETBALL COURT",
+    src: f.basketballCourt,
+    alt: "Covered outdoor basketball court",
+  },
+  {
+    caption: "SWIMMING POOL",
+    src: f.swimmingPool,
+    alt: "Covered swimming pool",
+  },
+  {
+    caption: "SPORT HALL",
+    src: f.sportHall,
+    alt: "Student playing badminton in the sport hall",
+  },
+  {
+    caption: "FUTSAL FIELD",
+    src: f.futsalField,
+    alt: "Outdoor futsal field seen from above",
+  },
+  {
+    caption: "VOLLEYBALL FIELD",
+    src: f.volleyballField,
+    alt: "Outdoor volleyball field seen from above",
+  },
+  {
+    caption: "MUSIC ROOM",
+    src: f.musicRoom,
+    alt: "Music room with Balinese gamelan instruments",
+  },
+  {
+    caption: "BIOLOGY LABORATORY",
+    src: f.biologyLab,
+    alt: "Students using microscopes in the biology lab",
+  },
+  {
+    caption: "CLASSROOM",
+    src: f.classroom,
+    alt: "Classroom with blue chairs and a whiteboard",
+  },
+  {
+    caption: "CAFETERIA",
+    src: f.cafeteria,
+    alt: "Students sitting in the school cafeteria",
+  },
 ];
 
+/** Figma sizes are px in a 1080px frame, so desktop sizes are in cqw of the section */
 export function FacilityGrid() {
   return (
-    <section className="bg-white py-10 lg:pt-8 lg:pb-16" aria-labelledby="school-facilities-title">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <h2
+    <section
+      className="@container bg-white pt-8 font-sans text-black lg:pt-[2.6vw]"
+      aria-labelledby="school-facilities-title"
+    >
+      {/* Padding lives here, not on the @container, so cqw tracks the full section width */}
+      <div className="px-4 sm:px-6 lg:px-[6.4%]">
+        <h1
           id="school-facilities-title"
-          className="text-center font-sans text-lg font-bold tracking-[0.09em] text-black lg:text-2xl xl:text-[25px]"
+          className="text-center text-xl font-bold tracking-[0.1em] lg:text-[1.85cqw]"
         >
           SCHOOL FACILITIES
-        </h2>
+        </h1>
+        <p className="mt-4 text-justify text-sm leading-[1.36] tracking-[0.1em] lg:mt-[1.9cqw] lg:text-[1.48cqw]">
+          JB School is proudly equipped with premium, purpose-built facilities
+          designed to support every student&apos;s unique journey of
+          self-discovery. Here, fully-equipped creative spaces, academic labs,
+          and sports arenas serve as the ultimate training ground for your child
+          to explore their interests and master their exceptional talents.
+        </p>
 
-        {/* Figma: 216px tiles, 30px column gap, 57px between a label and the next row.
-            Tiles open a looping lightbox on click. */}
+        {/* Tiles open a looping lightbox on click */}
         <PhotoGallery
           photos={FACILITIES}
           label="Facility photos"
-          listClassName="mt-8 grid grid-cols-2 gap-x-4 gap-y-8 md:grid-cols-3 md:gap-x-[4.2%] lg:mt-10 lg:gap-y-14"
-          tileClassName="rounded-[8%]"
+          listClassName="mt-6 grid grid-cols-2 gap-x-4 gap-y-6 md:grid-cols-3 lg:mt-[2cqw] lg:gap-x-[3.8cqw] lg:gap-y-[2.4cqw]"
+          tileClassName="rounded-[7.7%]"
+          captionClassName="lg:mt-[1.2cqw] lg:text-[1.48cqw] xl:text-[1.48cqw]"
           sizes="(min-width: 768px) 30vw, 50vw"
         />
+
+        <p className="mt-8 text-justify text-sm leading-[1.36] tracking-[0.1em] lg:mt-[3.3cqw] lg:text-[1.48cqw]">
+          To create a second home where students can truly flourish, JB School
+          offers a thoughtfully designed campus that balances modern comfort
+          with advanced technology. From our welcoming cafeteria and grand hall
+          to our smart classrooms integrated with interactive displays and media
+          TVs, every corner of our school is built to ensure students have the
+          spaces and tools they need to thrive.
+        </p>
       </div>
     </section>
   );

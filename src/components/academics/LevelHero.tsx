@@ -8,6 +8,7 @@ export function LevelHero({ hero }: { hero: LevelPageContent["hero"] }) {
       className="relative min-h-[200px] w-full overflow-hidden bg-neutral-100"
       style={{ aspectRatio: `1080 / ${hero.height}` }}
     >
+      <h1 className="sr-only">{hero.title}</h1>
       <HeroCarousel slides={hero.slides} />
       {hero.fade && (
         <div
