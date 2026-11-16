@@ -52,7 +52,7 @@ const SOCIALS: { label: string; href: string; Icon: IconType; name: string }[] =
     },
     {
       label: "JBSCHOOL BALI",
-      href: "https://youtube.com/@jbschoolbali",
+      href: "https://www.youtube.com/@jbschool6942",
       Icon: FaYoutube,
       name: "YouTube",
     },
