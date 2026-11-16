@@ -1,10 +1,9 @@
 import { Suspense } from "react";
 import type { Metadata } from "next";
-import { PartnerLogos } from "@/components/shared/PartnerLogos";
-import { TitleHero } from "@/components/shared/TitleHero";
+import { NewsHero } from "@/components/news/NewsHero";
+import { NewsActivities } from "@/components/news/NewsActivities";
 import { NewsGrid } from "@/components/news/NewsGrid";
-import { NewsSkeleton } from "@/components/news/NewsSkeleton";
-import { tokens } from "@/styles/tokens";
+import { NewsGridSkeleton, NewsSkeleton } from "@/components/news/NewsSkeleton";
 
 export const metadata: Metadata = {
   title: "News - JB School, Bali",
@@ -15,13 +14,12 @@ export const metadata: Metadata = {
 export default function NewsPage() {
   return (
     <Suspense fallback={<NewsSkeleton />}>
-      <TitleHero
-        title="NEWS"
-        image={tokens.assets.news.hero}
-        alt="JB School scouts at a camping activity"
-      />
-      <NewsGrid />
-      <PartnerLogos />
+      <NewsHero />
+      <NewsActivities />
+      {/* Instagram fetch streams in on its own */}
+      <Suspense fallback={<NewsGridSkeleton />}>
+        <NewsGrid />
+      </Suspense>
     </Suspense>
   );
 }

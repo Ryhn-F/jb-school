@@ -185,12 +185,8 @@ export const assets = {
     directionsMap: "/assets/contact/directions-map.png",
   },
   news: {
-    hero: "/assets/news/hero.jpg",
-    /** Instagram post exports from the Figma "News & Activities" grid */
-    posts: Array.from(
-      { length: 12 },
-      (_, i) => `/assets/news/post-${i + 1}.jpg`,
-    ),
+    banners: paths("news", "banner", 3),
+    activities: paths("news", "activity", 8),
   },
   community: {
     banner: "/assets/community/banner.jpg",
@@ -211,10 +207,6 @@ export const assets = {
     ),
     empoweringStudents: "/assets/home/empowering-students.png",
     admissionStudents: "/assets/home/admission-students.png",
-    achievements: Array.from(
-      { length: 4 },
-      (_, i) => `/assets/home/achievement-${i + 1}.png`,
-    ),
   },
 } as const;
 

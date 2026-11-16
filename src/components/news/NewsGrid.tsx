@@ -1,62 +1,50 @@
-import Image from "next/image";
 import { FaInstagram } from "react-icons/fa6";
-import { tokens } from "@/styles/tokens";
+import { getLatestInstagramPosts } from "@/lib/instagram";
+import { InstagramPostCard } from "@/components/shared/InstagramPostCard";
+import { InstagramFetchError } from "@/components/shared/InstagramFetchError";
 
 const INSTAGRAM_URL = "https://instagram.com/jbschool.bali";
 
-// Alt text for each Figma post, in grid order (row by row).
-const POST_ALTS = [
-  "Congratulations post: SMA Jembatan Budaya boys' basketball team, DCBC Students 2026",
-  "Congratulations post: Callysta Gavrila Salim, Grade TK, 3rd place colouring competition",
-  "Let's Learn Mandarin post",
-  "Congratulations post: Kadek Ayu Alisha Vrinda B., Grade 5, 2nd place 3x3 LIGABALI",
-  "Congratulations post: I Made Bagus Juna Wira W., Grade 7, 1st place IFC U14",
-  "Congratulations post: I Putu Gede Maheswa Putra, Grade 7, 1st place Omni Local Competition",
-  "Congratulations post: I Putu Oscar Januar Wicaksana S., Grade 9, 1st place International Football Championship",
-  "Congratulations post: I Gede Genji Surya Pradipta, Grade 8, 1st place Bupati Badung Cup 2026",
-  "JB School student video post",
-  "Congratulations post: Noeh Mikail Alyando Berdouk, Grade 7, 3rd place Piala Bela Negara",
-  "Congratulations post: Leica Nisrina Fauzi, Grade 9, Harapan 1 Perfect Tone Competition",
-  "Congratulations post: Kayleen Renata, Grade 9, 2nd place Merdeka Science Olimpiade",
-];
+/** News & Achievement: latest 12 Instagram posts (Figma 210 x 312 cards, 4 per row on a 1080px frame) */
+export async function NewsGrid() {
+  const posts = await getLatestInstagramPosts(12);
 
-export function NewsGrid() {
   return (
-    <section className="bg-white py-10 lg:pt-8 lg:pb-14" aria-labelledby="news-activities-title">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section
+      className="@container bg-white pt-8 pb-12 font-sans lg:pt-[2cqw] lg:pb-[5.6cqw]"
+      aria-labelledby="news-achievement-title"
+    >
+      <div className="px-4 sm:px-6 lg:px-[7.4%]">
         <h2
-          id="news-activities-title"
-          className="text-center font-sans text-xl font-bold tracking-[0.09em] text-black lg:text-3xl xl:text-[39px]"
+          id="news-achievement-title"
+          className="text-center text-xl font-bold tracking-[0.1em] text-black lg:text-[2.6cqw]"
         >
-          NEWS &amp; ACTIVITIES
+          NEWS &amp; ACHIEVEMENT
         </h2>
 
-        {/* Figma: 158x237 posts, 4 per row, ~19px column / 22px row gaps on an 810 frame */}
-        <ul className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:mt-12 lg:grid-cols-4 lg:gap-x-[2.8%] lg:gap-y-10">
-          {tokens.assets.news.posts.map((src, i) => (
-            <li
-              key={src}
-              className="relative aspect-[158/237] overflow-hidden rounded-[7.6%/5.1%] shadow-md"
-            >
-              <Image
-                src={src}
-                alt={POST_ALTS[i]}
-                fill
-                sizes="(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw"
-                className="object-cover"
-              />
-            </li>
-          ))}
-        </ul>
+        {posts ? (
+          <ul className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:mt-[2.9cqw] lg:grid-cols-4 lg:gap-x-[2.5cqw] lg:gap-y-[2.3cqw]">
+            {posts.map((post) => (
+              <li key={post.id}>
+                <InstagramPostCard
+                  post={post}
+                  sizes="(min-width: 1024px) 20vw, (min-width: 640px) 33vw, 50vw"
+                />
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <InstagramFetchError className="mt-6 lg:mt-[2.9cqw]" />
+        )}
 
-        <div className="mt-10 flex justify-center lg:mt-16">
+        <div className="mt-8 flex justify-center lg:mt-[3cqw]">
           <a
             href={INSTAGRAM_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 rounded-md bg-linear-to-b from-jb-ocean-light to-jb-ocean px-6 py-3 font-sans text-sm text-white shadow-sm transition hover:brightness-110 active:scale-95 lg:px-9 lg:py-4 lg:text-lg"
+            className="inline-flex items-center gap-3 rounded-[4px] bg-jb-ocean-light px-6 py-3 text-sm text-white shadow-sm transition hover:brightness-110 active:scale-95 lg:gap-[1cqw] lg:px-[2.6cqw] lg:py-[1.2cqw] lg:text-[1.11cqw]"
           >
-            <FaInstagram aria-hidden="true" className="h-5 w-5 lg:h-6 lg:w-6" />
+            <FaInstagram aria-hidden="true" className="h-4 w-4 lg:h-[1.3cqw] lg:w-[1.3cqw]" />
             Follow on instagram
           </a>
         </div>
