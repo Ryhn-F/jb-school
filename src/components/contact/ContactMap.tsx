@@ -3,17 +3,17 @@ const MAP_EMBED_URL =
 
 export function ContactMap() {
   return (
-    <section className="bg-white pt-10 lg:pt-6" aria-labelledby="google-maps-title">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section className="bg-white pt-[3vw] lg:pt-6" aria-labelledby="google-maps-title">
+      <div className="mx-auto max-w-7xl px-[5.6vw] lg:px-8">
         <h2
           id="google-maps-title"
-          className="text-center font-sans text-lg font-bold tracking-[0.09em] text-black lg:text-2xl xl:text-[25px]"
+          className="text-center font-sans font-bold tracking-[0.09em] text-black text-[max(17px,2.65vw)] lg:text-2xl xl:text-[25px]"
         >
           SEE US AT GOOGLE MAPS
         </h2>
 
-        {/* Figma: 684x282 map, 84% of the page width */}
-        <div className="mx-auto mt-6 aspect-[4/3] w-full overflow-hidden bg-neutral-100 sm:aspect-[684/282] lg:mt-8">
+        {/* Figma: 684x282 map, 84% of the page width; mobile uses a taller 16:9 so the embed stays usable */}
+        <div className="mx-auto mt-[2.8vw] aspect-video w-full overflow-hidden bg-neutral-100 lg:mt-8 lg:aspect-[684/282]">
           <iframe
             src={MAP_EMBED_URL}
             title="JB School location on Google Maps"

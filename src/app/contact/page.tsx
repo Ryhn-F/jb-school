@@ -16,11 +16,14 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <Suspense fallback={<ContactSkeleton />}>
-      <TitleHero
-        title="CONTACT US"
-        image={tokens.assets.contact.hero}
-        alt="JB School teachers and staff group photo"
-      />
+      {/* Mobile: 1080x469 banner like the sibling Admission/News frames; lg restates TitleHero's own desktop sizing */}
+      <div className="[&>section]:aspect-[1080/469] [&>section]:min-h-0 lg:[&>section]:aspect-[810/275] lg:[&>section]:min-h-[240px]">
+        <TitleHero
+          title="CONTACT US"
+          image={tokens.assets.contact.hero}
+          alt="JB School teachers and staff group photo"
+        />
+      </div>
       <ContactMap />
       <ContactInfoCard />
       <PartnerLogos />

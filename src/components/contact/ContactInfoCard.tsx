@@ -5,21 +5,21 @@ const linkClass = "hover:text-jb-navy transition-colors";
 
 export function ContactInfoCard() {
   return (
-    <section className="bg-white py-10 lg:pt-14 lg:pb-20" aria-labelledby="contact-info-title">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Figma: 510x332 card centered under the map; text left, directions map right */}
-        <div className="mx-auto grid max-w-4xl grid-cols-1 items-center gap-8 bg-jb-surface px-6 py-8 shadow-sm sm:grid-cols-[1fr_41.6%] sm:gap-[4%] sm:py-[3%] sm:pr-[3.5%] sm:pl-0">
-          <div className="text-center font-sans">
+    <section className="bg-white pt-[4.6vw] pb-[4.6vw] lg:pt-14 lg:pb-20" aria-labelledby="contact-info-title">
+      <div className="mx-auto max-w-7xl px-[5.6vw] lg:px-8">
+        {/* Figma: 510x332 card centered under the map; text left, directions map right (kept two-column on mobile like the sibling School Visit block, map column narrowed so the address lines fit at 360px) */}
+        <div className="mx-auto grid max-w-4xl grid-cols-[1fr_36%] items-center gap-[3%] bg-jb-surface py-[3%] pr-[3.5%] pl-0 lg:grid-cols-[1fr_41.6%] lg:gap-[4%] shadow-sm">
+          <div className="pl-[2%] text-center font-sans lg:pl-0">
             <h2
               id="contact-info-title"
-              className="text-3xl font-normal text-jb-navy-dark lg:text-4xl"
+              className="text-[max(20px,2.8vw)] font-normal text-jb-navy-dark lg:text-4xl"
             >
               Jembatan Budaya
             </h2>
-            <span aria-hidden="true" className="mx-auto mt-5 block h-0.5 w-9 bg-jb-sky" />
-            <p className="mt-6 text-xl text-jb-navy-dark lg:text-2xl">Informasi &amp; Pendaftaran :</p>
+            <span aria-hidden="true" className="mx-auto mt-[1.85vw] block h-0.5 w-[max(24px,3.3vw)] bg-jb-sky lg:mt-5 lg:w-9" />
+            <p className="mt-[2.2vw] text-[max(14px,2vw)] text-jb-navy-dark lg:mt-6 lg:text-2xl">Informasi &amp; Pendaftaran&nbsp;:</p>
 
-            <address className="mt-6 space-y-1.5 text-sm not-italic leading-relaxed text-neutral-600 lg:text-base">
+            <address className="mt-[2.2vw] space-y-[0.6vw] text-[max(13px,1.57vw)] not-italic leading-snug text-neutral-600 lg:mt-6 lg:space-y-1.5 lg:text-base lg:leading-relaxed">
               <p className="font-bold">Alamat:</p>
               <p>
                 Jalan Raya Kuta No. 1 Badung
@@ -52,12 +52,12 @@ export function ContactInfoCard() {
             </address>
           </div>
 
-          <div className="relative mx-auto aspect-[212/296] w-full max-w-xs sm:max-w-none">
+          <div className="relative mx-auto aspect-[212/296] w-full">
             <Image
               src={tokens.assets.contact.directionsMap}
               alt="Directions map: JB School is on Sunset Road near Jl. Mertasari, beside Hotel Harris and Sushi Kyuden"
               fill
-              sizes="(min-width: 640px) 360px, 320px"
+              sizes="(min-width: 1024px) 360px, 33vw"
               className="object-contain"
             />
           </div>
