@@ -38,34 +38,34 @@ const STATS_DATA: StatBadge[] = [
 export function StatsBanner() {
   return (
     <section
-      className="py-14 sm:py-20 bg-white"
+      className="pt-[4.4vw] pb-[4.9vw] lg:py-20 bg-white"
       aria-label="JB School Statistics"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 items-start justify-items-center">
+      <div className="max-w-7xl mx-auto px-[4.5vw] lg:px-8">
+        <div className="grid grid-cols-4 gap-[1vw] lg:gap-10 items-start justify-items-center">
           {STATS_DATA.map((item) => (
             <div
               key={item.label}
-              className="flex flex-col items-center text-center space-y-3 group"
+              className="flex flex-col items-center text-center space-y-[1.2vw] lg:space-y-3 group"
             >
               {/* Illustrated Ripple Badge */}
-              <div className="relative w-28 sm:w-32 lg:w-44 xl:w-52 aspect-[122/111] transition-transform duration-300 group-hover:scale-105">
+              <div className="relative w-[18.5vw] lg:w-44 xl:w-52 aspect-[122/111] transition-transform duration-300 group-hover:scale-105">
                 <Image
                   src={item.icon}
                   alt=""
                   aria-hidden="true"
                   fill
-                  sizes="208px"
+                  sizes="(min-width: 1024px) 208px, 19vw"
                   className="object-contain"
                 />
               </div>
 
               {/* Number and Label */}
-              <div className="space-y-1">
-                <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-jb-navy font-sans">
+              <div className="lg:space-y-1">
+                <div className="text-[max(17px,4.4vw)]/[1.15] lg:text-5xl font-bold text-jb-navy font-sans">
                   <CountUp end={item.value} suffix={item.suffix} />
                 </div>
-                <div className="text-sm sm:text-base lg:text-xl font-normal tracking-[0.09em] text-jb-navy uppercase font-sans">
+                <div className="text-[max(11px,2.27vw)]/[1.25] lg:text-xl font-normal tracking-[0.09em] text-jb-navy uppercase font-sans">
                   {item.label}
                 </div>
               </div>

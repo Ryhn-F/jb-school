@@ -45,7 +45,7 @@ export function AcademicCards() {
   const widths = isSmUp ? WIDTHS.sm : WIDTHS.base;
 
   return (
-    <div className="w-full lg:w-3/4 flex items-center justify-start lg:justify-end gap-3 overflow-x-auto pb-4 lg:pb-0 scrollbar-none">
+    <div className="hidden w-full lg:w-3/4 lg:flex items-center justify-start lg:justify-end gap-3 overflow-x-auto pb-4 lg:pb-0 scrollbar-none">
       {CARDS.map((card) => {
         const isActive = card.id === activeId;
 

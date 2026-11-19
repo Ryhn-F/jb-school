@@ -9,7 +9,7 @@ const HERO_SLIDES: HeroSlide[] = [
 
 export function HeroBanner() {
   return (
-    <section className="relative w-full overflow-hidden bg-neutral-100 aspect-[1080/336] min-h-[200px]">
+    <section className="relative w-full overflow-hidden bg-neutral-100 aspect-[1080/470] lg:aspect-[1080/336]">
       <h1 className="sr-only">JB School, Bali — 文桥三语学校</h1>
       <HeroCarousel slides={HERO_SLIDES} />
     </section>

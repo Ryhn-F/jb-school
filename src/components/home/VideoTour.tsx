@@ -5,16 +5,16 @@ const VIDEOS = [
 
 export function VideoTour() {
   return (
-    <section className="bg-white pt-10 pb-8 sm:pt-12" aria-labelledby="video-tour-title">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section className="bg-white pt-[3.5vw] pb-[2.8vw] lg:pt-12 lg:pb-8" aria-labelledby="video-tour-title">
+      <div className="mx-auto max-w-7xl px-[7.2vw] lg:px-8">
         <h2
           id="video-tour-title"
-          className="text-center font-sans text-xl font-bold text-neutral-950 sm:text-2xl"
+          className="text-center font-sans text-[max(14px,3.06vw)]/[1.2] font-bold text-neutral-950 lg:text-2xl"
         >
           Explore Our School Culture Through Video Tour
         </h2>
 
-        <div className="mt-6 grid grid-cols-1 gap-5 md:grid-cols-2 sm:mt-8">
+        <div className="mt-[2.3vw] grid grid-cols-1 gap-[2.3vw] lg:grid-cols-2 lg:gap-5 lg:mt-8">
           {VIDEOS.map((video) => (
             <iframe
               key={video.id}
