@@ -26,7 +26,7 @@ const ACADEMICS_SLIDES: HeroSlide[] = [
 
 export function AcademicsHero() {
   return (
-    <section className="relative w-full overflow-hidden bg-neutral-100 aspect-[810/275] min-h-[240px]">
+    <section className="relative w-full overflow-hidden border-b border-neutral-200 bg-neutral-100 aspect-[1080/470] lg:aspect-[810/275] lg:min-h-[240px] lg:border-b-0">
       <HeroCarousel slides={ACADEMICS_SLIDES} />
     </section>
   );
