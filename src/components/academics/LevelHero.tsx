@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import { HeroCarousel } from "@/components/shared/HeroCarousel";
 import { cn } from "@/lib/utils";
 import type { LevelPageContent } from "@/lib/level-pages";
@@ -5,8 +6,8 @@ import type { LevelPageContent } from "@/lib/level-pages";
 export function LevelHero({ hero }: { hero: LevelPageContent["hero"] }) {
   return (
     <section
-      className="relative min-h-[200px] w-full overflow-hidden bg-neutral-100"
-      style={{ aspectRatio: `1080 / ${hero.height}` }}
+      className="relative aspect-[1080/469] w-full overflow-hidden bg-neutral-100 lg:aspect-(--hero-aspect) lg:min-h-[200px]"
+      style={{ "--hero-aspect": `1080 / ${hero.height}` } as CSSProperties}
     >
       <h1 className="sr-only">{hero.title}</h1>
       <HeroCarousel slides={hero.slides} />

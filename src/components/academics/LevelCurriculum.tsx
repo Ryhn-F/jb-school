@@ -10,15 +10,15 @@ function Runs({ runs }: { runs: TextRun[] }) {
 /** Rich body copy; Figma sizes are px in a 1080px frame, so desktop sizes are in cqw of the section */
 export function LevelCurriculum({ curriculum }: { curriculum: LevelPageContent["curriculum"] }) {
   return (
-    <section className="@container bg-white pt-8 lg:pt-[4.4vw]" aria-labelledby="level-curriculum-title">
-      <div className="px-4 font-sans text-black sm:px-6 lg:px-[6.3%]">
+    <section className="@container bg-white pt-[4.4vw]" aria-labelledby="level-curriculum-title">
+      <div className="px-[6.4vw] font-sans text-black lg:px-[6.3%]">
         <h2
           id="level-curriculum-title"
-          className="text-center text-xl font-bold tracking-[0.1em] lg:text-[1.85cqw]"
+          className="text-center text-[max(17px,2.14vw)] leading-[1.4] font-bold tracking-[0.1em] lg:text-[1.85cqw]"
         >
           {curriculum.title}
         </h2>
-        <div className="mt-4 text-justify text-sm leading-[1.375] tracking-[0.1em] lg:mt-[1.67cqw] lg:text-[1.48cqw]">
+        <div className="mt-[1.6vw] text-justify text-[max(13px,1.57vw)] leading-[1.41] tracking-[0.1em] hyphens-auto lg:mt-[1.67cqw] lg:text-[1.48cqw] lg:leading-[1.375] lg:hyphens-manual">
           {curriculum.blocks.map((block, i) => {
             const spacing = block.spaced && "mt-[1lh]";
             return block.type === "p" ? (
