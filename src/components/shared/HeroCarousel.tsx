@@ -85,19 +85,24 @@ export function HeroCarousel({ slides }: { slides: HeroSlide[] }) {
         </div>
       </div>
 
-      <div className="absolute bottom-5 inset-x-0 z-20 flex justify-center items-center gap-2.5">
+      <div className="absolute bottom-2 lg:bottom-3.5 inset-x-0 z-20 flex justify-center items-center">
         {count > 1 && slides.map((_, i) => (
+          // 24px hit area around the 12px dot (touch-target minimum)
           <button
             key={i}
             type="button"
             onClick={() => goTo(i)}
             aria-label={`Go to slide ${i + 1}`}
             aria-current={i === index}
-            className={cn(
-              "w-3 h-3 rounded-full border-2 border-white shadow-md transition hover:scale-125 active:scale-90",
-              i === index ? "bg-white" : "bg-transparent hover:bg-white/50",
-            )}
-          />
+            className="group flex size-6 items-center justify-center"
+          >
+            <span
+              className={cn(
+                "w-3 h-3 rounded-full border-2 border-white shadow-md transition group-hover:scale-125 group-active:scale-90",
+                i === index ? "bg-white" : "bg-transparent group-hover:bg-white/50",
+              )}
+            />
+          </button>
         ))}
       </div>
     </>
