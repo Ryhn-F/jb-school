@@ -17,10 +17,10 @@ export function CommunityGallery({ id, title, intro, photos, mobileOrderClassNam
       aria-labelledby={id}
     >
       <div className="px-[4.6vw] lg:px-[5.7%]">
-        <h2 id={id} className="text-[max(16px,2.57vw)] leading-[1.4] font-bold tracking-[0.06em] lg:tracking-[0.1em] lg:text-[2.22cqw]">
+        <h2 id={id} className="text-[2.57vw] leading-[1.4] font-bold tracking-[0.06em] lg:tracking-[0.1em] lg:text-[2.22cqw]">
           {title}
         </h2>
-        <p className="mt-[1.4vw] text-justify text-[max(13px,1.56vw)] leading-[1.38] tracking-[0.09em] lg:mt-[1cqw] lg:leading-[1.36] lg:tracking-[0.1em] lg:text-[1.48cqw]">
+        <p className="mt-[1.4vw] text-justify text-[1.56vw] leading-[1.38] tracking-[0.09em] lg:mt-[1cqw] lg:leading-[1.36] lg:tracking-[0.1em] lg:text-[1.48cqw]">
           {intro}
         </p>
       </div>

@@ -80,10 +80,10 @@ export function Footer() {
         </Link>
 
         <div className="min-w-0 flex-1 basis-[60%] pt-[1.6vw] lg:min-w-auto lg:pt-[0.65vw]">
-          <h2 className="text-[max(13px,1.77vw)] font-bold lg:text-base xl:text-lg">
+          <h2 className="text-[1.77vw] font-bold lg:text-base xl:text-lg">
             JEMBATAN BUDAYA SCHOOL, BALI
           </h2>
-          <address className="mt-[1vw] text-[max(11px,1.11vw)] not-italic leading-[2] tracking-[1px] lg:mt-[1.4vw] lg:text-[10px] lg:leading-[1.8] xl:text-xs">
+          <address className="mt-[1vw] text-[1.11vw] not-italic leading-[2] tracking-[1px] lg:mt-[1.4vw] lg:text-[10px] lg:leading-[1.8] xl:text-xs">
             Jalan Raya Kuta No 1, Kuta, Badung, 80361 Bali - Indonesia
             <br />
             Telp : (+62 361) 752554, 752776, Fax : (+62 361) 756235
@@ -102,7 +102,7 @@ export function Footer() {
                   target="_blank"
                   rel="noreferrer"
                   aria-label={`JB School on ${name}`}
-                  className="flex min-h-6 items-center gap-[max(4px,0.7vw)] font-condensed text-[max(13px,1.93vw)] transition-opacity hover:opacity-80 lg:min-h-0 lg:gap-2 lg:text-xs xl:text-sm"
+                  className="flex min-h-6 items-center gap-[max(4px,0.7vw)] font-condensed text-[1.93vw] transition-opacity hover:opacity-80 lg:min-h-0 lg:gap-2 lg:text-xs xl:text-sm"
                 >
                   <Icon className="size-[max(18px,2.3vw)] lg:size-6 xl:size-7" aria-hidden="true" />
                   {label}
@@ -116,9 +116,9 @@ export function Footer() {
           <nav
             key={column.title}
             aria-label={column.title}
-            className="min-w-0 flex-1 basis-[25%] lg:min-w-auto text-[max(11px,1.11vw)] leading-6 lg:pt-[0.75vw] lg:text-[10px] lg:leading-[19px] xl:text-xs xl:leading-[22px]"
+            className="min-w-0 flex-1 basis-[25%] lg:min-w-auto text-[1.11vw] leading-6 lg:pt-[0.75vw] lg:text-[10px] lg:leading-[19px] xl:text-xs xl:leading-[22px]"
           >
-            <h3 className="text-[max(12px,1.3vw)] font-bold lg:text-[1em]">{column.title}</h3>
+            <h3 className="text-[1.3vw] font-bold lg:text-[1em]">{column.title}</h3>
             <ul className="tracking-[0.6px]">
               {column.links.map((link) => (
                 <li key={link.href}>

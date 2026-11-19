@@ -27,11 +27,11 @@ export function NewsActivities() {
       <div className="pr-[6.2vw] pl-[6.7vw] lg:px-[6.7%]">
         <h2
           id="news-activities-title"
-          className="text-center text-[max(20px,2.65vw)] leading-[1.4] font-bold tracking-[0.1em] lg:text-[2.6cqw]"
+          className="text-center text-[2.65vw] leading-[1.4] font-bold tracking-[0.1em] lg:text-[2.6cqw]"
         >
           ACTIVITIES
         </h2>
-        <p className="mt-[1.8vw] text-justify text-[max(13px,1.57vw)] leading-[1.41] tracking-[0.1em] lg:mt-[1.67cqw] lg:text-[1.48cqw] lg:leading-[1.36]">
+        <p className="mt-[1.8vw] text-justify text-[1.57vw] leading-[1.41] tracking-[0.1em] lg:mt-[1.67cqw] lg:text-[1.48cqw] lg:leading-[1.36]">
           {ACTIVITIES_INTRO}
         </p>
       </div>

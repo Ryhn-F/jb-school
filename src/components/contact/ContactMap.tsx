@@ -7,7 +7,7 @@ export function ContactMap() {
       <div className="mx-auto max-w-7xl px-[5.6vw] lg:px-8">
         <h2
           id="google-maps-title"
-          className="text-center font-sans font-bold tracking-[0.09em] text-black text-[max(17px,2.65vw)] lg:text-2xl xl:text-[25px]"
+          className="text-center font-sans font-bold tracking-[0.09em] text-black text-[2.65vw] lg:text-2xl xl:text-[25px]"
         >
           SEE US AT GOOGLE MAPS
         </h2>

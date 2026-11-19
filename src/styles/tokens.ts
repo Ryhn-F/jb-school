@@ -206,9 +206,8 @@ export const assets = {
       (_, i) => `/assets/home/banner-${i + 1}.png`,
     ),
     empoweringStudents: "/assets/home/empowering-students.png",
+    /** Admission band students cutout; the brick shape and wave are drawn as SVG in AdmissionCallout */
     admissionStudents: "/assets/home/admission-students.png",
-    /** Mobile admission band: students + brick shape composite from the Figma mobile frame */
-    admissionCallout: "/assets/home/admission-callout.png",
   },
 } as const;
 

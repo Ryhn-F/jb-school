@@ -31,7 +31,7 @@ export function LevelActivities({
       <div className="px-[6.1vw] lg:px-0">
         <h2
           id="level-activities-title"
-          className="text-center font-sans text-[max(17px,2.14vw)] leading-[1.4] font-bold tracking-[0.1em] lg:text-[1.85cqw] text-black"
+          className="text-center font-sans text-[2.14vw] leading-[1.4] font-bold tracking-[0.1em] lg:text-[1.85cqw] text-black"
         >
           ACTIVITIES
         </h2>

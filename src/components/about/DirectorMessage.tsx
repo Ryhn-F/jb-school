@@ -30,16 +30,16 @@ export function DirectorMessage() {
         <header className="text-center">
           <h2
             id="director-message-title"
-            className="font-sans text-[max(15px,2.27vw)] font-bold tracking-[0.08em] lg:tracking-[0.1em] lg:text-2xl xl:text-[26px]"
+            className="font-sans text-[2.27vw] font-bold tracking-[0.08em] lg:tracking-[0.1em] lg:text-2xl xl:text-[26px]"
           >
             MESSAGE FROM SCHOOL DIRECTOR
           </h2>
-          <p className="mt-[1vw] font-sans text-[max(13px,1.8vw)] tracking-[0.1em] lg:mt-1 lg:text-xl xl:text-[22px]">
+          <p className="mt-[1vw] font-sans text-[1.8vw] tracking-[0.1em] lg:mt-1 lg:text-xl xl:text-[22px]">
             Ms. Ayu Maharani <span className="whitespace-nowrap">(江道云女士)</span>
           </p>
         </header>
 
-        <div className="mt-[1.6vw] space-y-[2.2vw] font-sans text-[max(13px,1.57vw)] leading-[1.42] tracking-[0.1em] text-left sm:text-justify hyphens-auto lg:mt-5 lg:hyphens-manual lg:space-y-3 lg:leading-[1.45] lg:text-sm xl:text-[15px]">
+        <div className="mt-[1.6vw] space-y-[2.2vw] font-sans text-[1.57vw] leading-[1.42] tracking-[0.1em] text-left sm:text-justify hyphens-auto lg:mt-5 lg:hyphens-manual lg:space-y-3 lg:leading-[1.45] lg:text-sm xl:text-[15px]">
           {DIRECTOR_PARAGRAPHS.map((paragraph) => (
             <p key={paragraph.slice(0, 24)}>{paragraph}</p>
           ))}

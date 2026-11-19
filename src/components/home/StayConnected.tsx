@@ -10,7 +10,7 @@ export async function StayConnected() {
       <div className="mx-auto max-w-5xl px-[6.4vw] lg:px-8">
         <h2
           id="stay-connected-title"
-          className="text-center font-sans text-[max(14px,2.56vw)]/[1.2] font-bold text-neutral-950 lg:text-2xl"
+          className="text-center font-sans text-[2.56vw]/[1.2] font-bold text-neutral-950 lg:text-2xl"
         >
           Stay Connected with Us
         </h2>

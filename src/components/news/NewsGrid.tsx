@@ -17,7 +17,7 @@ export async function NewsGrid() {
       <div className="pr-[6vw] pl-[6.6vw] lg:px-[7.4%]">
         <h2
           id="news-achievement-title"
-          className="text-center text-[max(20px,2.65vw)] leading-[1.4] font-bold tracking-[0.1em] text-black lg:text-[2.6cqw]"
+          className="text-center text-[2.65vw] leading-[1.4] font-bold tracking-[0.1em] text-black lg:text-[2.6cqw]"
         >
           NEWS &amp; ACHIEVEMENT
         </h2>
@@ -42,7 +42,7 @@ export async function NewsGrid() {
             href={INSTAGRAM_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-[max(8px,0.9vw)] rounded-[4px] bg-jb-ocean-light px-[max(14px,1.6vw)] py-[max(8px,1.4vw)] text-[max(11px,1.1vw)] leading-[calc(1.25/0.875)] text-white shadow-sm transition hover:brightness-110 active:scale-95 lg:gap-[1cqw] lg:px-[2.6cqw] lg:py-[1.2cqw] lg:text-[1.11cqw]"
+            className="inline-flex items-center gap-[max(8px,0.9vw)] rounded-[4px] bg-jb-ocean-light px-[max(14px,1.6vw)] py-[max(8px,1.4vw)] text-[1.1vw] leading-[calc(1.25/0.875)] text-white shadow-sm transition hover:brightness-110 active:scale-95 lg:gap-[1cqw] lg:px-[2.6cqw] lg:py-[1.2cqw] lg:text-[1.11cqw]"
           >
             <FaInstagram aria-hidden="true" className="h-[max(14px,1.7vw)] w-[max(14px,1.7vw)] lg:h-[1.3cqw] lg:w-[1.3cqw]" />
             Follow on instagram

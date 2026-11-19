@@ -15,11 +15,11 @@ export function SchoolVisit() {
         <div className="pt-[4.35cqw] pr-[1.85cqw] pl-[6.4cqw] lg:absolute lg:top-[4.6cqw] lg:left-[8.3%] lg:w-[39.9%] lg:p-0">
           <h2
             id="school-visit-title"
-            className="text-center text-[max(17px,2.65cqw)] leading-[calc(2/1.5)] font-bold whitespace-nowrap lg:text-[2.78cqw]"
+            className="text-center text-[2.65cqw] leading-[calc(2/1.5)] font-bold whitespace-nowrap lg:text-[2.78cqw]"
           >
             SCHOOL VISIT
           </h2>
-          <div className="mt-[2.2cqw] text-[max(13px,1.56cqw)] leading-[1.35] tracking-[0.04em] lg:mt-[0.74cqw] lg:text-justify lg:text-[1.57cqw] lg:tracking-[0.1em]">
+          <div className="mt-[2.2cqw] text-[1.56cqw] leading-[1.35] tracking-[0.04em] lg:mt-[0.74cqw] lg:text-justify lg:text-[1.57cqw] lg:tracking-[0.1em]">
             <p>
               &ldquo;Discover our vibrant learning environment firsthand. We
               invite you to explore our campus and meet our dedicated team, who
@@ -48,7 +48,7 @@ export function SchoolVisit() {
         </div>
       </div>
 
-      <div className="mt-[3.2cqw] px-4 text-center text-[max(13px,1.57cqw)] leading-[calc(1.25/0.875)] lg:mt-[3.3cqw] lg:text-[1.57cqw]">
+      <div className="mt-[3.2cqw] px-4 text-center text-[1.57cqw] leading-[calc(1.25/0.875)] lg:mt-[3.3cqw] lg:text-[1.57cqw]">
         <p>If you have a question please contact us at&nbsp;:</p>
         <p className="mt-[1.85cqw] lg:mt-[1.76cqw]">
           Telp :{" "}

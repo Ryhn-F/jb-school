@@ -13,7 +13,7 @@ export function ChairmanMessage() {
       className="relative w-full overflow-hidden bg-white px-[4.3vw] pb-[3.2vw] text-black lg:hidden"
       aria-labelledby="chairman-message-title"
     >
-      {/* Figma "Decorative Blob": moss shape flush right. Floated so text that outgrows it (13px floor on phones) wraps under it instead of leaving the right side empty. */}
+      {/* Figma "Decorative Blob": moss shape flush right. Floated so text that outgrows it wraps under it instead of leaving the right side empty. */}
       <svg
         aria-hidden="true"
         viewBox="0 0 416 735"
@@ -27,16 +27,16 @@ export function ChairmanMessage() {
         <header className="text-center">
           <h2
             id="chairman-message-title"
-            className="font-sans text-[max(15px,2.27vw)] font-bold leading-[1.35] tracking-[0.08em]"
+            className="font-sans text-[2.27vw] font-bold leading-[1.35] tracking-[0.08em]"
           >
             MESSAGE FROM CHAIRMAN OF THE JEMBATAN BUDAYA FOUNDATION
           </h2>
-          <p className="mt-[0.7vw] font-sans text-[max(13px,1.85vw)] tracking-[0.09em]">
+          <p className="mt-[0.7vw] font-sans text-[1.85vw] tracking-[0.09em]">
             Mr. Putu Bahaduri <span className="whitespace-nowrap">(江睿 先生)</span>
           </p>
         </header>
 
-        <div className="mt-[2.7vw] space-y-[2.2vw] font-sans text-[max(13px,1.57vw)] leading-[1.42] tracking-[0.1em] text-left sm:text-justify hyphens-auto">
+        <div className="mt-[2.7vw] space-y-[2.2vw] font-sans text-[1.57vw] leading-[1.42] tracking-[0.1em] text-left sm:text-justify hyphens-auto">
           {CHAIRMAN_PARAGRAPHS.map((paragraph) => (
             <p key={paragraph.slice(0, 24)}>{paragraph}</p>
           ))}

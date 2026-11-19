@@ -62,10 +62,10 @@ export function StatsBanner() {
 
               {/* Number and Label */}
               <div className="lg:space-y-1">
-                <div className="text-[max(17px,4.4vw)]/[1.15] lg:text-5xl font-bold text-jb-navy font-sans">
+                <div className="text-[4.4vw]/[1.15] lg:text-5xl font-bold text-jb-navy font-sans">
                   <CountUp end={item.value} suffix={item.suffix} />
                 </div>
-                <div className="text-[max(11px,2.27vw)]/[1.25] lg:text-xl font-normal tracking-[0.09em] text-jb-navy uppercase font-sans">
+                <div className="text-[2.27vw]/[1.25] lg:text-xl font-normal tracking-[0.09em] text-jb-navy uppercase font-sans">
                   {item.label}
                 </div>
               </div>

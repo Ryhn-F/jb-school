@@ -9,12 +9,12 @@ export function AcademicLevelsGrid() {
     >
       <div className="mx-auto max-w-7xl px-[6vw] text-black lg:px-8">
         <header className="text-center">
-          <span className="block font-sans text-[max(11px,2.27vw)] font-normal tracking-[0.1em] lg:text-lg lg:font-bold xl:text-xl">
+          <span className="block font-sans text-[2.27vw] font-normal tracking-[0.1em] lg:text-lg lg:font-bold xl:text-xl">
             ACADEMICS
           </span>
           <h2
             id="academics-title"
-            className="mt-[1vw] font-sans text-[max(14px,3.44vw)] font-bold lg:mt-2 lg:text-3xl"
+            className="mt-[1vw] font-sans text-[3.44vw] font-bold lg:mt-2 lg:text-3xl"
           >
             COOPERATION, COMMUNICATION, CHARACTER
           </h2>
@@ -26,7 +26,7 @@ export function AcademicLevelsGrid() {
           ))}
         </div>
 
-        <blockquote className="mx-auto mt-[4vw] max-w-4xl text-center font-sans text-[max(13px,1.5vw)] leading-normal tracking-[0.01em] lg:mt-16 lg:text-xl xl:text-[23px]">
+        <blockquote className="mx-auto mt-[4vw] max-w-4xl text-center font-sans text-[1.5vw] leading-normal tracking-[0.01em] lg:mt-16 lg:text-xl xl:text-[23px]">
           &ldquo;True education equips students with the{" "}
           <span className="font-bold">Communication</span> to be heard, the{" "}
           <span className="font-bold">Cooperation</span> to work globally, and{" "}

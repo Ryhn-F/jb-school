@@ -9,7 +9,7 @@ export function VideoTour() {
       <div className="mx-auto max-w-7xl px-[7.2vw] lg:px-8">
         <h2
           id="video-tour-title"
-          className="text-center font-sans text-[max(14px,3.06vw)]/[1.2] font-bold text-neutral-950 lg:text-2xl"
+          className="text-center font-sans text-[3.06vw]/[1.2] font-bold text-neutral-950 lg:text-2xl"
         >
           Explore Our School Culture Through Video Tour
         </h2>

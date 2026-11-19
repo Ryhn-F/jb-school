@@ -14,11 +14,11 @@ export function LevelCurriculum({ curriculum }: { curriculum: LevelPageContent["
       <div className="px-[6.4vw] font-sans text-black lg:px-[6.3%]">
         <h2
           id="level-curriculum-title"
-          className="text-center text-[max(17px,2.14vw)] leading-[1.4] font-bold tracking-[0.1em] lg:text-[1.85cqw]"
+          className="text-center text-[2.14vw] leading-[1.4] font-bold tracking-[0.1em] lg:text-[1.85cqw]"
         >
           {curriculum.title}
         </h2>
-        <div className="mt-[1.6vw] text-justify text-[max(13px,1.57vw)] leading-[1.41] tracking-[0.1em] hyphens-auto lg:mt-[1.67cqw] lg:text-[1.48cqw] lg:leading-[1.375] lg:hyphens-manual">
+        <div className="mt-[1.6vw] text-justify text-[1.57vw] leading-[1.41] tracking-[0.1em] hyphens-auto lg:mt-[1.67cqw] lg:text-[1.48cqw] lg:leading-[1.375] lg:hyphens-manual">
           {curriculum.blocks.map((block, i) => {
             const spacing = block.spaced && "mt-[1lh]";
             return block.type === "p" ? (

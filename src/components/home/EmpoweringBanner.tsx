@@ -9,23 +9,23 @@ export function EmpoweringBanner() {
           {/* Left Text Content (mobile: left ~52vw column beside the photo, Figma 1080 frame) */}
           <div className="w-[52vw] lg:w-auto lg:col-span-5 space-y-[1.7vw] lg:space-y-4 py-[2.6vw] lg:py-12 z-10">
             <div className="lg:space-y-1">
-              <h2 className="text-[max(16px,4.6vw)]/[1.15] lg:text-5xl font-light tracking-[0.1em] lg:tracking-wider text-white uppercase font-sans">
+              <h2 className="text-[4.6vw]/[1.15] lg:text-5xl font-light tracking-[0.1em] lg:tracking-wider text-white uppercase font-sans">
                 EMPOWERING
               </h2>
               <div className="flex items-baseline gap-[1.2vw] lg:gap-3 flex-wrap">
-                <span className="text-[max(16px,4.5vw)]/[1.15] lg:text-5xl font-semibold tracking-tight  text-white uppercase font-sans">
+                <span className="text-[4.5vw]/[1.15] lg:text-5xl font-semibold tracking-tight  text-white uppercase font-sans">
                   STUDENTS
                 </span>
-                <span className="text-[max(16px,4.5vw)]/[1.15] lg:text-5xl font-light tracking-[0.1em] lg:tracking-wide text-white/95 uppercase font-sans">
+                <span className="text-[4.5vw]/[1.15] lg:text-5xl font-light tracking-[0.1em] lg:tracking-wide text-white/95 uppercase font-sans">
                   FOR
                 </span>
               </div>
-              <h3 className="text-[max(16px,4.5vw)]/[1.15] lg:text-5xl font-semibold tracking-tight text-white uppercase font-sans">
+              <h3 className="text-[4.5vw]/[1.15] lg:text-5xl font-semibold tracking-tight text-white uppercase font-sans">
                 SUCCESS
               </h3>
             </div>
 
-            <p className="text-[max(13px,1.57vw)]/[1.4] lg:text-sm text-white/90 max-w-lg lg:leading-5 tracking-widest pt-[0.8vw] lg:pt-2 font-sans">
+            <p className="text-[1.57vw]/[1.4] lg:text-sm text-white/90 max-w-lg lg:leading-5 tracking-widest pt-[0.8vw] lg:pt-2 font-sans">
               &ldquo;Empower your child&apos;s journey at JB School—a safe,
               supportive home for expanding knowledge, nurturing talents, and
               building a foundation for future success.&rdquo;

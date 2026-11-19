@@ -11,7 +11,7 @@ export function FacilitiesMap() {
     >
       <h2
         id="facilities-map-title"
-        className="text-center text-[max(16px,2.14vw)] leading-[1.4] font-bold tracking-[0.1em] lg:text-[1.85cqw]"
+        className="text-center text-[2.14vw] leading-[1.4] font-bold tracking-[0.1em] lg:text-[1.85cqw]"
       >
         SEE US AT GOOGLE MAPS
       </h2>

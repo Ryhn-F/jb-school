@@ -12,14 +12,14 @@ export function ContactInfoCard() {
           <div className="pl-[2%] text-center font-sans lg:pl-0">
             <h2
               id="contact-info-title"
-              className="text-[max(20px,2.8vw)] font-normal text-jb-navy-dark lg:text-4xl"
+              className="text-[2.8vw] font-normal text-jb-navy-dark lg:text-4xl"
             >
               Jembatan Budaya
             </h2>
             <span aria-hidden="true" className="mx-auto mt-[1.85vw] block h-0.5 w-[max(24px,3.3vw)] bg-jb-sky lg:mt-5 lg:w-9" />
-            <p className="mt-[2.2vw] text-[max(14px,2vw)] text-jb-navy-dark lg:mt-6 lg:text-2xl">Informasi &amp; Pendaftaran&nbsp;:</p>
+            <p className="mt-[2.2vw] text-[2vw] text-jb-navy-dark lg:mt-6 lg:text-2xl">Informasi &amp; Pendaftaran&nbsp;:</p>
 
-            <address className="mt-[2.2vw] space-y-[0.6vw] text-[max(13px,1.57vw)] not-italic leading-snug text-neutral-600 lg:mt-6 lg:space-y-1.5 lg:text-base lg:leading-relaxed">
+            <address className="mt-[2.2vw] space-y-[0.6vw] text-[1.57vw] not-italic leading-snug text-neutral-600 lg:mt-6 lg:space-y-1.5 lg:text-base lg:leading-relaxed">
               <p className="font-bold">Alamat:</p>
               <p>
                 Jalan Raya Kuta No. 1 Badung

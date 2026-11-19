@@ -66,11 +66,11 @@ export function FacilityGrid() {
       <div className="px-[6.6vw] lg:px-[6.4%]">
         <h1
           id="school-facilities-title"
-          className="text-center text-[max(16px,2.14vw)] leading-[1.4] font-bold tracking-[0.1em] lg:text-[1.85cqw]"
+          className="text-center text-[2.14vw] leading-[1.4] font-bold tracking-[0.1em] lg:text-[1.85cqw]"
         >
           SCHOOL FACILITIES
         </h1>
-        <p className="mt-[1.6vw] text-justify text-[max(13px,1.57vw)] leading-[1.36] tracking-[0.1em] lg:mt-[1.9cqw] lg:text-[1.48cqw]">
+        <p className="mt-[1.6vw] text-justify text-[1.57vw] leading-[1.36] tracking-[0.1em] lg:mt-[1.9cqw] lg:text-[1.48cqw]">
           JB School is proudly equipped with premium, purpose-built facilities
           designed to support every student&apos;s unique journey of
           self-discovery. Here, fully-equipped creative spaces, academic labs,
@@ -84,11 +84,11 @@ export function FacilityGrid() {
           label="Facility photos"
           listClassName="mt-[2.5vw] grid grid-cols-3 gap-x-[3.5vw] gap-y-[2.3vw] lg:mt-[2cqw] lg:gap-x-[3.8cqw] lg:gap-y-[2.4cqw]"
           tileClassName="rounded-[7.7%]"
-          captionClassName="mt-[1.3vw] text-[max(11px,1.5vw)] leading-[calc(1.25/0.875)] sm:text-[max(11px,1.5vw)] lg:mt-[1.2cqw] lg:text-[1.48cqw] xl:text-[1.48cqw]"
+          captionClassName="mt-[1.3vw] text-[1.5vw] leading-[calc(1.25/0.875)] sm:text-[1.5vw] lg:mt-[1.2cqw] lg:text-[1.48cqw] xl:text-[1.48cqw]"
           sizes="30vw"
         />
 
-        <p className="mt-[4.6vw] text-justify text-[max(13px,1.57vw)] leading-[1.36] tracking-[0.1em] lg:mt-[3.3cqw] lg:text-[1.48cqw]">
+        <p className="mt-[4.6vw] text-justify text-[1.57vw] leading-[1.36] tracking-[0.1em] lg:mt-[3.3cqw] lg:text-[1.48cqw]">
           To create a second home where students can truly flourish, JB School
           offers a thoughtfully designed campus that balances modern comfort
           with advanced technology. From our welcoming cafeteria and grand hall

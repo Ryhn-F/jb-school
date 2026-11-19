@@ -11,7 +11,7 @@ export function CommunityTestimonial() {
     >
       <h2
         id="community-testimonial-title"
-        className="px-[4.6vw] text-center text-[max(16px,2.4vw)] leading-[1.4] font-bold tracking-[0.077em] text-black lg:px-4 lg:tracking-[0.1em] lg:text-[2.22cqw]"
+        className="px-[4.6vw] text-center text-[2.4vw] leading-[1.4] font-bold tracking-[0.077em] text-black lg:px-4 lg:tracking-[0.1em] lg:text-[2.22cqw]"
       >
         ALUMNI AND PARENTS TESTIMONIAL
       </h2>

@@ -54,7 +54,7 @@ export function NavLink({ label, href, hasDropdown, items }: NavLinkProps) {
           } else setOpen(false);
         }}
         className={cn(
-          "inline-flex min-h-6 items-center gap-1 py-1 font-display text-[max(10px,1.3vw)] font-bold tracking-normal transition-colors lg:text-xs lg:tracking-wider",
+          "inline-flex min-h-6 items-center gap-1 py-1 font-display text-[1.3vw] font-bold tracking-normal transition-colors lg:text-xs lg:tracking-wider",
           isActive ? "font-semibold text-neutral-400" : "text-black hover:text-jb-navy",
         )}
       >

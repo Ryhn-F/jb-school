@@ -18,11 +18,11 @@ const REQUIRED_DOCUMENTS = [
 ];
 
 // Figma "5.Admission" (desktop + mobile frames): sizes are px in a 1080px frame, so sizes are cqw of the section;
-// mobile text uses max() floors to stay readable on phones. calc() leadings keep the old text-sm/3xl line-heights so desktop is unchanged.
+// mobile text scales exactly with the Figma frame (no px floors). calc() leadings keep the old text-sm/3xl line-heights so desktop is unchanged.
 const headingClass =
-  "font-sans text-[max(13px,1.51cqw)] leading-[calc(1.25/0.875)] font-bold tracking-[0.15em] lg:text-[1.48cqw]";
+  "font-sans text-[1.51cqw] leading-[calc(1.25/0.875)] font-bold tracking-[0.15em] lg:text-[1.48cqw]";
 const listClass =
-  "mt-[2.2cqw] list-disc pl-[max(20px,2.8cqw)] font-sans text-[max(13px,1.56cqw)] leading-[1.41] tracking-[0.1em] lg:pl-[1.9cqw] lg:text-justify lg:text-[1.57cqw]";
+  "mt-[2.2cqw] list-disc pl-[max(20px,2.8cqw)] font-sans text-[1.56cqw] leading-[1.41] tracking-[0.1em] lg:pl-[1.9cqw] lg:text-justify lg:text-[1.57cqw]";
 
 export function ProcedureList() {
   return (
@@ -31,14 +31,14 @@ export function ProcedureList() {
       aria-labelledby="admission-procedure-title"
     >
       <header className="px-[5cqw] text-center lg:px-4 font-sans tracking-[0.1em]">
-        <p className="text-[max(17px,2.02cqw)] font-bold lg:text-[1.67cqw]">ADMISSION</p>
+        <p className="text-[2.02cqw] font-bold lg:text-[1.67cqw]">ADMISSION</p>
         <h2
           id="admission-procedure-title"
-          className="mt-[0.3cqw] text-[max(27px,3.28cqw)] leading-[1.2] font-bold lg:text-[3.15cqw]"
+          className="mt-[0.3cqw] text-[3.28cqw] leading-[1.2] font-bold lg:text-[3.15cqw]"
         >
           PROCEDURE
         </h2>
-        <p className="mt-[2.6cqw] text-[max(13px,1.56cqw)] leading-[calc(1.25/0.875)] lg:text-[1.57cqw]">
+        <p className="mt-[2.6cqw] text-[1.56cqw] leading-[calc(1.25/0.875)] lg:text-[1.57cqw]">
           Kindly take a moment to read the information detail about the
           registration procedure:
         </p>
