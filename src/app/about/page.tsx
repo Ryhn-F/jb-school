@@ -2,6 +2,7 @@ import { Suspense } from "react";
 import type { Metadata } from "next";
 import { AboutHero } from "@/components/about/AboutHero";
 import { OurHistory } from "@/components/about/OurHistory";
+import { ChairmanMessage } from "@/components/about/ChairmanMessage";
 import { DirectorMessage } from "@/components/about/DirectorMessage";
 import { VisionMission } from "@/components/about/VisionMission";
 import { AboutSkeleton } from "@/components/about/AboutSkeleton";
@@ -17,6 +18,7 @@ export default function AboutPage() {
     <Suspense fallback={<AboutSkeleton />}>
       <AboutHero />
       <OurHistory />
+      <ChairmanMessage />
       <DirectorMessage />
       <VisionMission />
     </Suspense>

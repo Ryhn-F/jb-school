@@ -14,23 +14,29 @@ const HISTORY_PILLARS: HistoryPillar[] = [
   },
 ];
 
+// Mobile values follow the Figma mobile frame (1080 wide, px / 10.8 = vw); lg: keeps the desktop design.
+// Narrow two-column text is left-aligned below sm: justified 13px text in ~180px columns leaves wide gaps.
+const BODY_TEXT =
+  "font-sans text-[max(13px,1.57vw)] leading-[1.42] hyphens-auto lg:text-start lg:hyphens-manual lg:text-lg xl:text-xl";
+
 export function OurHistory() {
   return (
-    <section className="bg-white py-10 lg:pt-8 lg:pb-8" aria-labelledby="our-history-title">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-black">
+    <section className="bg-white py-[3.2vw] lg:pt-8 lg:pb-8" aria-labelledby="our-history-title">
+      <div className="mx-auto max-w-7xl px-[4.4vw] lg:px-8 text-black">
         <header className="text-center">
           <h2
             id="our-history-title"
-            className="font-sans text-xl font-bold tracking-[0.1em] lg:text-2xl xl:text-[26px]"
+            className="font-sans text-[max(18px,2.9vw)] font-bold tracking-[0.1em] lg:text-2xl xl:text-[26px]"
           >
             OUR HISTORY
           </h2>
-          <p className="mt-2 font-sans text-base tracking-[0.1em] lg:text-xl xl:text-[22px]">
-            Established by Mr. Putu Kangen Disastra (已故江连福先生) in 2004
+          <p className="mt-[0.5vw] font-sans text-[max(14px,1.8vw)] tracking-[0.1em] lg:mt-2 lg:text-xl xl:text-[22px]">
+            Established by Mr. Putu Kangen Disastra{" "}
+            <span className="whitespace-nowrap">(已故江连福先生)</span> in 2004
           </p>
         </header>
 
-        <p className="mt-6 font-sans text-sm leading-[1.42] tracking-[0.09em] lg:mt-8 lg:text-lg xl:text-xl">
+        <p className={`mt-[2.6vw] tracking-[0.1em] text-justify lg:mt-8 lg:tracking-[0.09em] ${BODY_TEXT}`}>
           Officially established on July 19, 2004, Sekolah Jembatan Budaya (JB
           School) was envisioned and founded by the Chairman of the Jembatan
           Budaya Foundation, the late Mr. Putu Kangen Disastra (已故江连福先生).
@@ -39,15 +45,13 @@ export function OurHistory() {
           education system, particularly here in Bali
         </p>
 
-        <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-[6%] lg:mt-8">
+        <div className="mt-[3vw] grid grid-cols-2 gap-[3.3vw] lg:mt-8 lg:gap-[6%]">
           {HISTORY_PILLARS.map((pillar) => (
             <article key={pillar.title}>
-              <h3 className="font-sans text-sm font-bold tracking-[0.1em] lg:text-lg xl:text-xl">
+              <h3 className="font-sans text-[max(13px,1.67vw)] font-bold tracking-[0.07em] lg:tracking-[0.1em] lg:text-lg xl:text-xl">
                 {pillar.title}
               </h3>
-              <p className="mt-4 font-sans text-sm leading-[1.42] tracking-[0.1em] lg:mt-6 lg:text-lg xl:text-xl">
-                {pillar.body}
-              </p>
+              <p className={`mt-[2vw] tracking-[0.1em] text-left sm:text-justify lg:mt-6 ${BODY_TEXT}`}>{pillar.body}</p>
             </article>
           ))}
         </div>

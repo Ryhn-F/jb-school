@@ -10,9 +10,9 @@ const ABOUT_SLIDES: HeroSlide[] = [
 
 export function AboutHero() {
   return (
-    // Figma: 1080 x 336 banner
+    // Figma: 1080 x 336 banner (mobile frame: 1080 x 469)
     <section
-      className="relative w-full overflow-hidden bg-neutral-100 aspect-[1080/336] min-h-[200px]"
+      className="relative w-full overflow-hidden bg-neutral-100 aspect-[1080/469] lg:aspect-[1080/336] lg:min-h-[200px]"
       aria-label="About JB School"
     >
       <h1 className="sr-only">About Us</h1>
