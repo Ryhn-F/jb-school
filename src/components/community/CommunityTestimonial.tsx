@@ -6,17 +6,17 @@ const VIDEO = {
 export function CommunityTestimonial() {
   return (
     <section
-      className="@container bg-white pt-6 pb-12 font-sans lg:pt-[1.3cqw] lg:pb-[15cqw]"
+      className="@container bg-white pt-[2.3vw] pb-[3.5vw] font-sans lg:pt-[1.3cqw] lg:pb-[15cqw]"
       aria-labelledby="community-testimonial-title"
     >
       <h2
         id="community-testimonial-title"
-        className="px-4 text-center text-xl font-bold tracking-[0.1em] text-black lg:text-[2.22cqw]"
+        className="px-[4.6vw] text-center text-[max(16px,2.4vw)] leading-[1.4] font-bold tracking-[0.077em] text-black lg:px-4 lg:tracking-[0.1em] lg:text-[2.22cqw]"
       >
         ALUMNI AND PARENTS TESTIMONIAL
       </h2>
 
-      <div className="mt-6 px-4 sm:px-6 lg:mt-[4cqw] lg:px-[6.5%]">
+      <div className="mt-[3.9vw] px-[6.4vw] lg:mt-[4cqw] lg:px-[6.5%]">
         <iframe
           src={`https://www.youtube-nocookie.com/embed/${VIDEO.id}`}
           title={VIDEO.title}

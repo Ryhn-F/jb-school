@@ -3,9 +3,9 @@ import { tokens } from "@/styles/tokens";
 
 export function CommunityHero() {
   return (
-    // Figma: 1080 x 335 banner, single photo
+    // Figma: 1080 x 335 desktop banner, 1080 x 469 mobile crop
     <section
-      className="relative aspect-[1080/335] min-h-[200px] w-full overflow-hidden bg-neutral-100"
+      className="relative aspect-[1080/469] w-full lg:aspect-[1080/335] lg:min-h-[200px] overflow-hidden bg-neutral-100"
       aria-label="JB School community"
     >
       <h1 className="sr-only">Community</h1>

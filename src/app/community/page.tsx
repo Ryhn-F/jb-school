@@ -43,12 +43,14 @@ export default function CommunityPage() {
         title="JB SCHOOL ALUMNI ASSOCIATION"
         intro="The JB School Alumni Association was founded by our graduates to serve as an unbreakable bridge, ensuring that those who have walked our halls always have a path back home. Through this enduring connection, our alumni proudly remain an active part of the JB School family, returning to share their journeys and ignite inspiration in the hearts of the younger generations following in their footsteps."
         photos={ALUMNI_PHOTOS}
+        mobileOrderClassName="max-lg:[&>li:nth-child(3)]:order-1 max-lg:[&>li:nth-child(6)]:order-1"
       />
       <CommunityGallery
         id="parents-activities-title"
         title="PARENTS ACTIVITIES"
         intro="At JB School, we understand that raising a well-rounded child requires the united hearts of both educators and families, which is the driving force behind our active Parents Community. We proudly walk side-by-side with our parents, empowering them to step beyond the sidelines and become inspiring role models who actively help shape the bright futures of our students."
         photos={PARENTS_PHOTOS}
+        mobileOrderClassName="max-lg:[&>li:nth-child(4)]:order-1"
       />
       <CommunityTestimonial />
     </Suspense>
