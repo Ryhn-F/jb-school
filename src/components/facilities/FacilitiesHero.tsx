@@ -11,7 +11,7 @@ const FACILITIES_SLIDES: HeroSlide[] = [
 
 export function FacilitiesHero() {
   return (
-    <section className="relative aspect-[1080/334] min-h-[200px] w-full overflow-hidden bg-neutral-100">
+    <section className="relative aspect-[1080/469] w-full lg:aspect-[1080/334] lg:min-h-[200px] overflow-hidden bg-neutral-100">
       <HeroCarousel slides={FACILITIES_SLIDES} />
       {/* Figma: white fade over the right edge of the banner */}
       <div

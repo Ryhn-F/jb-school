@@ -6,19 +6,19 @@ const MAP_EMBED_URL =
 export function FacilitiesMap() {
   return (
     <section
-      className="@container bg-white pt-10 pb-12 font-sans text-black lg:pt-[3.8vw] lg:pb-[5.4vw]"
+      className="@container bg-white pt-[1.8vw] pb-[3.6vw] font-sans text-black lg:pt-[3.8vw] lg:pb-[5.4vw]"
       aria-labelledby="facilities-map-title"
     >
       <h2
         id="facilities-map-title"
-        className="text-center text-xl font-bold tracking-[0.1em] lg:text-[1.85cqw]"
+        className="text-center text-[max(16px,2.14vw)] leading-[1.4] font-bold tracking-[0.1em] lg:text-[1.85cqw]"
       >
         SEE US AT GOOGLE MAPS
       </h2>
       <iframe
         src={MAP_EMBED_URL}
         title="JB School location on Google Maps"
-        className="mx-auto mt-6 block aspect-[4/3] w-[calc(100%-2rem)] border-0 sm:aspect-[908/369] lg:mt-[2.6cqw] lg:w-[84%]"
+        className="mx-auto mt-[2vw] block aspect-[950/392] w-[88%] border-0 lg:aspect-[908/369] lg:mt-[2.6cqw] lg:w-[84%]"
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"
         allowFullScreen

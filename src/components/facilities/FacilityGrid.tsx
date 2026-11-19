@@ -55,22 +55,22 @@ const FACILITIES: GalleryPhoto[] = [
   },
 ];
 
-/** Figma sizes are px in a 1080px frame, so desktop sizes are in cqw of the section */
+/** Figma sizes are px in a 1080px frame: mobile in vw (px / 10.8), desktop in cqw of the section */
 export function FacilityGrid() {
   return (
     <section
-      className="@container bg-white pt-8 font-sans text-black lg:pt-[2.6vw]"
+      className="@container bg-white pt-[4.9vw] font-sans text-black lg:pt-[2.6vw]"
       aria-labelledby="school-facilities-title"
     >
       {/* Padding lives here, not on the @container, so cqw tracks the full section width */}
-      <div className="px-4 sm:px-6 lg:px-[6.4%]">
+      <div className="px-[6.6vw] lg:px-[6.4%]">
         <h1
           id="school-facilities-title"
-          className="text-center text-xl font-bold tracking-[0.1em] lg:text-[1.85cqw]"
+          className="text-center text-[max(16px,2.14vw)] leading-[1.4] font-bold tracking-[0.1em] lg:text-[1.85cqw]"
         >
           SCHOOL FACILITIES
         </h1>
-        <p className="mt-4 text-justify text-sm leading-[1.36] tracking-[0.1em] lg:mt-[1.9cqw] lg:text-[1.48cqw]">
+        <p className="mt-[1.6vw] text-justify text-[max(13px,1.57vw)] leading-[1.36] tracking-[0.1em] lg:mt-[1.9cqw] lg:text-[1.48cqw]">
           JB School is proudly equipped with premium, purpose-built facilities
           designed to support every student&apos;s unique journey of
           self-discovery. Here, fully-equipped creative spaces, academic labs,
@@ -82,13 +82,13 @@ export function FacilityGrid() {
         <PhotoGallery
           photos={FACILITIES}
           label="Facility photos"
-          listClassName="mt-6 grid grid-cols-2 gap-x-4 gap-y-6 md:grid-cols-3 lg:mt-[2cqw] lg:gap-x-[3.8cqw] lg:gap-y-[2.4cqw]"
+          listClassName="mt-[2.5vw] grid grid-cols-3 gap-x-[3.5vw] gap-y-[2.3vw] lg:mt-[2cqw] lg:gap-x-[3.8cqw] lg:gap-y-[2.4cqw]"
           tileClassName="rounded-[7.7%]"
-          captionClassName="lg:mt-[1.2cqw] lg:text-[1.48cqw] xl:text-[1.48cqw]"
-          sizes="(min-width: 768px) 30vw, 50vw"
+          captionClassName="mt-[1.3vw] text-[max(11px,1.5vw)] leading-[calc(1.25/0.875)] sm:text-[max(11px,1.5vw)] lg:mt-[1.2cqw] lg:text-[1.48cqw] xl:text-[1.48cqw]"
+          sizes="30vw"
         />
 
-        <p className="mt-8 text-justify text-sm leading-[1.36] tracking-[0.1em] lg:mt-[3.3cqw] lg:text-[1.48cqw]">
+        <p className="mt-[4.6vw] text-justify text-[max(13px,1.57vw)] leading-[1.36] tracking-[0.1em] lg:mt-[3.3cqw] lg:text-[1.48cqw]">
           To create a second home where students can truly flourish, JB School
           offers a thoughtfully designed campus that balances modern comfort
           with advanced technology. From our welcoming cafeteria and grand hall
