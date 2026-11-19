@@ -10,9 +10,9 @@ const ADMISSION_SLIDES: HeroSlide[] = [
 
 export function AdmissionHero() {
   return (
-    // Figma: 1080 x 335 banner
+    // Figma: 1080 x 469 banner on mobile, 1080 x 335 on desktop
     <section
-      className="relative aspect-[1080/335] min-h-[200px] w-full overflow-hidden bg-neutral-100"
+      className="relative aspect-[1080/469] w-full lg:aspect-[1080/335] lg:min-h-[200px] overflow-hidden bg-neutral-100"
       aria-label="JB School admission"
     >
       <h1 className="sr-only">Admission</h1>

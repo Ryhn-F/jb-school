@@ -17,42 +17,43 @@ const REQUIRED_DOCUMENTS = [
   "One (1) set of permit letter to study in Indonesia from the Ministry of Education, Culture, Research, and Technology – upon student’s acceptance (foreign students only)",
 ];
 
-// Figma "5.Admission": sizes are px in a 1080px frame, so desktop sizes are cqw of the section.
+// Figma "5.Admission" (desktop + mobile frames): sizes are px in a 1080px frame, so sizes are cqw of the section;
+// mobile text uses max() floors to stay readable on phones. calc() leadings keep the old text-sm/3xl line-heights so desktop is unchanged.
 const headingClass =
-  "font-sans text-sm font-bold tracking-[0.15em] lg:text-[1.48cqw]";
+  "font-sans text-[max(13px,1.51cqw)] leading-[calc(1.25/0.875)] font-bold tracking-[0.15em] lg:text-[1.48cqw]";
 const listClass =
-  "list-disc pl-5 font-sans text-sm leading-[1.41] tracking-[0.1em] lg:mt-[2.2cqw] lg:pl-[1.9cqw] lg:text-justify lg:text-[1.57cqw]";
+  "mt-[2.2cqw] list-disc pl-[max(20px,2.8cqw)] font-sans text-[max(13px,1.56cqw)] leading-[1.41] tracking-[0.1em] lg:pl-[1.9cqw] lg:text-justify lg:text-[1.57cqw]";
 
 export function ProcedureList() {
   return (
     <section
-      className="@container bg-white pt-8 pb-6 text-black lg:pt-[3cqw] lg:pb-[2cqw]"
+      className="@container bg-white pt-[3cqw] pb-[4.9cqw] text-black lg:pb-[2cqw]"
       aria-labelledby="admission-procedure-title"
     >
-      <header className="px-4 text-center font-sans tracking-[0.1em]">
-        <p className="text-base font-bold lg:text-[1.67cqw]">ADMISSION</p>
+      <header className="px-[5cqw] text-center lg:px-4 font-sans tracking-[0.1em]">
+        <p className="text-[max(17px,2.02cqw)] font-bold lg:text-[1.67cqw]">ADMISSION</p>
         <h2
           id="admission-procedure-title"
-          className="text-3xl font-bold lg:mt-[0.3cqw] lg:text-[3.15cqw]"
+          className="mt-[0.3cqw] text-[max(27px,3.28cqw)] leading-[1.2] font-bold lg:text-[3.15cqw]"
         >
           PROCEDURE
         </h2>
-        <p className="mt-3 text-sm lg:mt-[2.6cqw] lg:text-[1.57cqw]">
+        <p className="mt-[2.6cqw] text-[max(13px,1.56cqw)] leading-[calc(1.25/0.875)] lg:text-[1.57cqw]">
           Kindly take a moment to read the information detail about the
           registration procedure:
         </p>
       </header>
 
-      <div className="px-4 sm:px-6 lg:pr-[5.4%] lg:pl-[5%]">
-        <h3 className={`mt-8 lg:mt-[4.35cqw] ${headingClass}`}>REGISTRATION PROCEDURE :</h3>
-        <ul className={`mt-4 ${listClass}`}>
+      <div className="pr-[5.5cqw] pl-[5cqw] lg:pr-[5.4%] lg:pl-[5%]">
+        <h3 className={`mt-[4.2cqw] lg:mt-[4.35cqw] ${headingClass}`}>REGISTRATION PROCEDURE :</h3>
+        <ul className={listClass}>
           {REGISTRATION_STEPS.map((step) => (
             <li key={step}>{step}</li>
           ))}
         </ul>
 
-        <h3 className={`mt-6 lg:mt-[2.5cqw] ${headingClass}`}>GENERAL REGISTRATION DOCUMENTS :</h3>
-        <ul className={`mt-4 ${listClass}`}>
+        <h3 className={`mt-[2.4cqw] lg:mt-[2.5cqw] ${headingClass}`}>GENERAL REGISTRATION DOCUMENTS :</h3>
+        <ul className={listClass}>
           {REQUIRED_DOCUMENTS.map((doc) => (
             <li key={doc}>{doc}</li>
           ))}
